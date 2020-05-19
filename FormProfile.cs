@@ -18,11 +18,15 @@ namespace MrRobot
             InitializeComponent();
             _form = form;
             label2.Text = _form.login;
+            if (_form.isAdmin == true) button3.Visible = true;
+            
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Pomyślnie wylogowano");
+            _form.isAdmin = false;
             _form.ActivateButton(_form.iconButton5, Color.FromArgb(0, 150, 136));
             _form.OpenChildForm(new FormLogIn(_form));
             _form.labelTitleChildForm.Text = "Zaloguj";

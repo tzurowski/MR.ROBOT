@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace MrRobot
 {
@@ -36,6 +37,10 @@ namespace MrRobot
             SqlDataAdapter sda = new SqlDataAdapter(loginQuery, connection);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
+            if(dtbl.Rows[0].Field<int>(3) == 1)
+            {
+                _form.isAdmin = true;
+            }
             if (dtbl.Rows.Count == 1)
             {
                 _form.ActivateButton(_form.iconButton1, Color.FromArgb(0, 150, 136));

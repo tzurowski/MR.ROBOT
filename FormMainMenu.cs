@@ -18,6 +18,7 @@ namespace MrRobot
         private Panel leftBorderBtn;
         private Form currentChildForm;
         public string login = "";
+        public bool isAdmin = false;
         public FormMainMenu()
         {
             InitializeComponent();
