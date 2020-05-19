@@ -8,10 +8,18 @@ namespace MrRobot
 {
     class Uzytkownik
     {
-        public string _login { get => _login; private set { } }
-        private string _mail;
-        private string _haslo;
+        public string _login;
+        public string _mail;
+        public string _haslo;
+        public bool _isAdmin;
+        public bool _isSeller;
+        public int _IDAddress;
         public string status = "aktywny";
+
+        public Uzytkownik()
+        {
+
+        }
 
         public Uzytkownik(string login, string haslo, string mail)
         {

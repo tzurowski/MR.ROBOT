@@ -51,6 +51,11 @@
   <ItemGroup>
     <Compile Include="Administrator.cs" />
     <Compile Include="Adres.cs" />
+    <Compile Include="Baza.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Baza.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormCart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +141,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Baza.xsc">
+      <DependentUpon>Baza.xsd</DependentUpon>
+    </None>
+    <None Include="Baza.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Baza.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Baza.xss">
+      <DependentUpon>Baza.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

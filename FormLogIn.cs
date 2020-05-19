@@ -32,18 +32,23 @@ namespace MrRobot
 
         public void Zaloguj(string login, string haslo)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tzuro\OneDrive\Studia\6 Inżynieria oprogramowania\MrRobot\DB\LoginDB.mdf;Integrated Security=True;Connect Timeout=30");
-            string loginQuery = "SELECT * FROM LoginTable WHERE username='" + login + "'and password = '" + haslo + "'";
-            SqlDataAdapter sda = new SqlDataAdapter(loginQuery, connection);
-            DataTable dtbl = new DataTable();
-            sda.Fill(dtbl);
-            
-            if (dtbl.Rows.Count == 1)
+            Uzytkownik uzytkownik = new Uzytkownik();
+            BazaTableAdapters.UzytkownikTableAdapter tableadapterUzytkownik = new BazaTableAdapters.UzytkownikTableAdapter();
+            Baza.UzytkownikDataTable tableUzytkownik = new Baza.UzytkownikDataTable();
+            tableadapterUzytkownik.GetUser(tableUzytkownik, login, haslo);
+            foreach (Baza.UzytkownikRow row in tableUzytkownik.Rows)
             {
-                if (dtbl.Rows[0].Field<int>(3) == 1)
-                {
+                uzytkownik._login = row.UserLogin;
+                uzytkownik._haslo = row.UserHaslo;
+                uzytkownik._isAdmin = row.UserAdmin;
+                uzytkownik._isSeller = row.UserSprzedawca;
+                uzytkownik._IDAddress = row.IsUserAdrIDNull()?-1:row.UserAdrID;
+            }
+
+            if(uzytkownik._login != null)
+            {
+                if (uzytkownik._isAdmin == true)
                     _form.isAdmin = true;
-                }
                 _form.ActivateButton(_form.iconButton1, Color.FromArgb(0, 150, 136));
                 _form.OpenChildForm(new FormShop());
                 _form.labelTitleChildForm.Text = "Sklep";
