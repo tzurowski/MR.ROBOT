@@ -63,6 +63,16 @@ namespace MrRobot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _64495 {
+            get {
+                object obj = ResourceManager.GetObject("64495", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RobotLogo {
             get {
                 object obj = ResourceManager.GetObject("RobotLogo", resourceCulture);

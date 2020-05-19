@@ -384,16 +384,16 @@
         #endregion
 
         private System.Windows.Forms.Panel panelMenu;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        public FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Panel panelLogo;
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private FontAwesome.Sharp.IconButton iconButton5;
+        public FontAwesome.Sharp.IconButton iconButton5;
         private System.Windows.Forms.Panel panelTitleBar;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
-        private System.Windows.Forms.Label labelTitleChildForm;
+        public System.Windows.Forms.Label labelTitleChildForm;
         private System.Windows.Forms.Panel panelShadow;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.PictureBox pictureBox2;

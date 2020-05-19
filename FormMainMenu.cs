@@ -17,6 +17,7 @@ namespace MrRobot
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        public string login = "";
         public FormMainMenu()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace MrRobot
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             //open only form
             if (currentChildForm != null)
@@ -50,7 +51,7 @@ namespace MrRobot
         }
 
         //metody
-        private void ActivateButton(object senderBtn, Color color)
+        public void ActivateButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
             {
@@ -70,7 +71,7 @@ namespace MrRobot
                 leftBorderBtn.BringToFront();
                 //Current Child Form Icon
                 iconCurrentChildForm.IconChar = currentBtn.IconChar;
-                
+
             }
         }
 
@@ -89,7 +90,7 @@ namespace MrRobot
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, Color.FromArgb(0,150,136));
+            ActivateButton(sender, Color.FromArgb(0, 150, 136));
             OpenChildForm(new FormShop());
             labelTitleChildForm.Text = "Sklep";
         }
@@ -115,11 +116,26 @@ namespace MrRobot
             labelTitleChildForm.Text = "Ustawienia";
         }
 
-        private void iconButton5_Click(object sender, EventArgs e)
+        public void iconButton5_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, Color.FromArgb(0, 150, 136));
-            OpenChildForm(new FormLogIn());
-            labelTitleChildForm.Text = "Zaloguj";
+            if (iconButton5.Text == "Zaloguj")
+            {
+                ActivateButton(sender, Color.FromArgb(0, 150, 136));
+                OpenChildForm(new FormLogIn(this));
+                labelTitleChildForm.Text = "Zaloguj";
+            }
+            else if(iconButton5.Text == "Wyloguj")
+            {
+                ActivateButton(sender, Color.FromArgb(0, 150, 136));
+                OpenChildForm(new FormProfile(this));
+                labelTitleChildForm.Text = "Profil użytkownika";
+            }
+            else
+            {
+                ActivateButton(sender, Color.FromArgb(0, 150, 136));
+                OpenChildForm(new FormRegistration(this));
+                labelTitleChildForm.Text = "Rejestracja";
+            }
         }
 
 
