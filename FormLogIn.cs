@@ -37,12 +37,13 @@ namespace MrRobot
             SqlDataAdapter sda = new SqlDataAdapter(loginQuery, connection);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
-            if(dtbl.Rows[0].Field<int>(3) == 1)
-            {
-                _form.isAdmin = true;
-            }
+            
             if (dtbl.Rows.Count == 1)
             {
+                if (dtbl.Rows[0].Field<int>(3) == 1)
+                {
+                    _form.isAdmin = true;
+                }
                 _form.ActivateButton(_form.iconButton1, Color.FromArgb(0, 150, 136));
                 _form.OpenChildForm(new FormShop());
                 _form.labelTitleChildForm.Text = "Sklep";
