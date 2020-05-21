@@ -65,7 +65,7 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(293, 830);
             this.panelMenu.TabIndex = 0;
@@ -82,8 +82,8 @@
             this.iconButton5.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton5.IconSize = 36;
             this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(0, 392);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButton5.Location = new System.Drawing.Point(0, 404);
+            this.iconButton5.Margin = new System.Windows.Forms.Padding(4);
             this.iconButton5.Name = "iconButton5";
             this.iconButton5.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.iconButton5.Rotation = 0D;
@@ -107,8 +107,8 @@
             this.iconButton4.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton4.IconSize = 36;
             this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(0, 318);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButton4.Location = new System.Drawing.Point(0, 330);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(4);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.iconButton4.Rotation = 0D;
@@ -132,8 +132,8 @@
             this.iconButton3.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton3.IconSize = 36;
             this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(0, 244);
-            this.iconButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButton3.Location = new System.Drawing.Point(0, 256);
+            this.iconButton3.Margin = new System.Windows.Forms.Padding(4);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.iconButton3.Rotation = 0D;
@@ -157,8 +157,8 @@
             this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton2.IconSize = 36;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 170);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButton2.Location = new System.Drawing.Point(0, 182);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(4);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.iconButton2.Rotation = 0D;
@@ -182,8 +182,8 @@
             this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButton1.IconSize = 36;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 96);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButton1.Location = new System.Drawing.Point(0, 108);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.iconButton1.Rotation = 0D;
@@ -200,16 +200,16 @@
             this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(293, 96);
+            this.panelLogo.Size = new System.Drawing.Size(293, 108);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MrRobot.Properties.Resources.RobotLogo1;
             this.pictureBox1.Location = new System.Drawing.Point(28, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(243, 66);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -227,7 +227,7 @@
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(293, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4);
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(1166, 96);
             this.panelTitleBar.TabIndex = 1;
@@ -247,7 +247,7 @@
             this.iconButtonMinimize.IconSize = 24;
             this.iconButtonMinimize.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonMinimize.Location = new System.Drawing.Point(1012, 4);
-            this.iconButtonMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButtonMinimize.Margin = new System.Windows.Forms.Padding(4);
             this.iconButtonMinimize.Name = "iconButtonMinimize";
             this.iconButtonMinimize.Rotation = 0D;
             this.iconButtonMinimize.Size = new System.Drawing.Size(49, 41);
@@ -269,7 +269,7 @@
             this.iconButtonMaximize.IconSize = 24;
             this.iconButtonMaximize.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonMaximize.Location = new System.Drawing.Point(1069, 4);
-            this.iconButtonMaximize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButtonMaximize.Margin = new System.Windows.Forms.Padding(4);
             this.iconButtonMaximize.Name = "iconButtonMaximize";
             this.iconButtonMaximize.Rotation = 0D;
             this.iconButtonMaximize.Size = new System.Drawing.Size(49, 41);
@@ -291,7 +291,7 @@
             this.iconButtonClose.IconSize = 24;
             this.iconButtonClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonClose.Location = new System.Drawing.Point(1122, 4);
-            this.iconButtonClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButtonClose.Margin = new System.Windows.Forms.Padding(4);
             this.iconButtonClose.Name = "iconButtonClose";
             this.iconButtonClose.Rotation = 0D;
             this.iconButtonClose.Size = new System.Drawing.Size(40, 41);
@@ -318,7 +318,7 @@
             this.iconCurrentChildForm.IconColor = System.Drawing.Color.White;
             this.iconCurrentChildForm.IconSize = 49;
             this.iconCurrentChildForm.Location = new System.Drawing.Point(28, 28);
-            this.iconCurrentChildForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconCurrentChildForm.Margin = new System.Windows.Forms.Padding(4);
             this.iconCurrentChildForm.Name = "iconCurrentChildForm";
             this.iconCurrentChildForm.Size = new System.Drawing.Size(53, 49);
             this.iconCurrentChildForm.TabIndex = 0;
@@ -329,7 +329,7 @@
             this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelShadow.Location = new System.Drawing.Point(293, 96);
-            this.panelShadow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelShadow.Margin = new System.Windows.Forms.Padding(4);
             this.panelShadow.Name = "panelShadow";
             this.panelShadow.Size = new System.Drawing.Size(1166, 12);
             this.panelShadow.TabIndex = 2;
@@ -339,7 +339,7 @@
             this.panelDesktop.Controls.Add(this.pictureBox2);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(293, 108);
-            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1166, 722);
             this.panelDesktop.TabIndex = 3;
@@ -349,7 +349,7 @@
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::MrRobot.Properties.Resources.RobotLogoBlack;
             this.pictureBox2.Location = new System.Drawing.Point(226, 210);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(716, 242);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -366,7 +366,7 @@
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMainMenu";
             this.Text = "Form1";
             this.panelMenu.ResumeLayout(false);

@@ -162,8 +162,11 @@ namespace MrRobot
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
-            Reset();
+            if(currentChildForm != null)
+            {
+                currentChildForm.Close();
+                Reset();
+            }
         }
 
         private void iconButtonClose_Click(object sender, EventArgs e)
