@@ -49,7 +49,7 @@ namespace MrRobot
             {
                 if (uzytkownik._isAdmin == true)
                     _form.isAdmin = true;
-                _form.ActivateButton(_form.iconButton1, Color.FromArgb(0, 150, 136));
+                _form.ActivateButton(_form.iconButton1);
                 _form.OpenChildForm(new FormShop());
                 _form.labelTitleChildForm.Text = "Sklep";
                 _form.iconButton5.Text = "Wyloguj";
@@ -64,7 +64,7 @@ namespace MrRobot
 
         private void button2_Click(object sender, EventArgs e)
         {
-            _form.ActivateButton(_form.iconButton5, Color.FromArgb(0, 150, 136));
+            _form.ActivateButton(_form.iconButton5);
             _form.OpenChildForm(new FormRegistration(_form));
             _form.labelTitleChildForm.Text = "Rejestracja";
             _form.iconButton5.Text = "Zarejestruj";

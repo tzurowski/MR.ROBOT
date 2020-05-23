@@ -27,7 +27,7 @@ namespace MrRobot
         {
             MessageBox.Show("Pomyślnie wylogowano");
             _form.isAdmin = false;
-            _form.ActivateButton(_form.iconButton5, Color.FromArgb(0, 150, 136));
+            _form.ActivateButton(_form.iconButton5);
             _form.OpenChildForm(new FormLogIn(_form));
             _form.labelTitleChildForm.Text = "Zaloguj";
             _form.iconButton5.Text = "Zaloguj";

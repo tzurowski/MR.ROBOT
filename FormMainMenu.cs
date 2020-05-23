@@ -19,6 +19,8 @@ namespace MrRobot
         private Form currentChildForm;
         public string login = "";
         public bool isAdmin = false;
+        private Color sideMenuColor = Color.FromArgb(51, 51, 76);
+        private Color activeColor = Color.FromArgb(0, 150, 136);
         public FormMainMenu()
         {
             InitializeComponent();
@@ -52,27 +54,23 @@ namespace MrRobot
         }
 
         //metody
-        public void ActivateButton(object senderBtn, Color color)
+        public void ActivateButton(object senderBtn)
         {
             if (senderBtn != null)
             {
                 DisableButton();
                 //Button
                 currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(51, 51, 76);
-                currentBtn.ForeColor = color;
-                currentBtn.TextAlign = ContentAlignment.MiddleRight;
-                currentBtn.IconColor = color;
-                //currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-                //currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+                currentBtn.BackColor = sideMenuColor;
+                currentBtn.ForeColor = activeColor;
+                currentBtn.IconColor = activeColor;
                 //Left border button
-                leftBorderBtn.BackColor = color;
+                leftBorderBtn.BackColor = activeColor;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
                 //Current Child Form Icon
                 iconCurrentChildForm.IconChar = currentBtn.IconChar;
-
             }
         }
 
@@ -80,39 +78,36 @@ namespace MrRobot
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = Color.FromArgb(51, 51, 76);
+                currentBtn.BackColor = sideMenuColor;
                 currentBtn.ForeColor = Color.Gainsboro;
-                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
                 currentBtn.IconColor = Color.Gainsboro;
-                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, Color.FromArgb(0, 150, 136));
+            ActivateButton(sender);
             OpenChildForm(new FormShop());
             labelTitleChildForm.Text = "Sklep";
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, Color.FromArgb(0, 150, 136));
+            ActivateButton(sender);
             OpenChildForm(new FormCart());
             labelTitleChildForm.Text = "Koszyk";
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, Color.FromArgb(0, 150, 136));
+            ActivateButton(sender);
             OpenChildForm(new FormOrders());
             labelTitleChildForm.Text = "Zamówienia";
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, Color.FromArgb(0, 150, 136));
+            ActivateButton(sender);
             OpenChildForm(new FormSettings());
             labelTitleChildForm.Text = "Ustawienia";
         }
@@ -121,19 +116,19 @@ namespace MrRobot
         {
             if (iconButton5.Text == "Zaloguj")
             {
-                ActivateButton(sender, Color.FromArgb(0, 150, 136));
+                ActivateButton(sender);
                 OpenChildForm(new FormLogIn(this));
                 labelTitleChildForm.Text = "Zaloguj";
             }
             else if(iconButton5.Text == "Wyloguj")
             {
-                ActivateButton(sender, Color.FromArgb(0, 150, 136));
+                ActivateButton(sender);
                 OpenChildForm(new FormProfile(this));
                 labelTitleChildForm.Text = "Profil użytkownika";
             }
             else
             {
-                ActivateButton(sender, Color.FromArgb(0, 150, 136));
+                ActivateButton(sender);
                 OpenChildForm(new FormRegistration(this));
                 labelTitleChildForm.Text = "Rejestracja";
             }
@@ -156,7 +151,6 @@ namespace MrRobot
             DisableButton();
             leftBorderBtn.Visible = false;
             iconCurrentChildForm.IconChar = IconChar.Home;
-            //iconCurrentChildForm.IconColor = Color.MediumPurple;
             labelTitleChildForm.Text = "Strona główna";
         }
 
