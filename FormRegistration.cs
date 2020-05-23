@@ -21,10 +21,10 @@ namespace MrRobot
 
         private void button2_Click(object sender, EventArgs e)
         {
-            _form.ActivateButton(_form.iconButton5);
+            _form.ActivateButton(_form.iconButtonAccount);
             _form.OpenChildForm(new FormLogIn(_form));
             _form.labelTitleChildForm.Text = "Zaloguj";
-            _form.iconButton5.Text = "Zaloguj";
+            _form.iconButtonAccount.Text = "Zaloguj";
         }
     }
 }

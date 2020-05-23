@@ -19,7 +19,9 @@ namespace MrRobot
         private Form currentChildForm;
         public string login = "";
         public bool isAdmin = false;
+        public bool isLoggedIn = false;
         private Color sideMenuColor = Color.FromArgb(51, 51, 76);
+        private Color subMenuColor = Color.FromArgb(41, 41, 61);
         private Color activeColor = Color.FromArgb(0, 150, 136);
         public FormMainMenu()
         {
@@ -27,6 +29,7 @@ namespace MrRobot
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
+            panelAccountSubMenu.Visible = false;
             //Form
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -65,12 +68,13 @@ namespace MrRobot
                 currentBtn.ForeColor = activeColor;
                 currentBtn.IconColor = activeColor;
                 //Left border button
-                leftBorderBtn.BackColor = activeColor;
+                leftBorderBtn.BackColor = activeColor; 
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
                 //Current Child Form Icon
                 iconCurrentChildForm.IconChar = currentBtn.IconChar;
+                
             }
         }
 
@@ -78,53 +82,54 @@ namespace MrRobot
         {
             if (currentBtn != null)
             {
-                currentBtn.BackColor = sideMenuColor;
+                if (panelAccountSubMenu.Visible == true)
+                    panelAccountSubMenu.Visible = false;
+                if (currentBtn == (IconButton)iconButtonProfile || currentBtn == (IconButton)iconButtonLogOut)
+                    currentBtn.BackColor = subMenuColor;
+                    
+                else
+                    currentBtn.BackColor = sideMenuColor;
                 currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.IconColor = Color.Gainsboro;
             }
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void iconButtonShop_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
             OpenChildForm(new FormShop());
             labelTitleChildForm.Text = "Sklep";
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void iconButtonCart_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
             OpenChildForm(new FormCart());
             labelTitleChildForm.Text = "Koszyk";
         }
 
-        private void iconButton3_Click(object sender, EventArgs e)
+        private void iconButtonOrders_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
             OpenChildForm(new FormOrders());
             labelTitleChildForm.Text = "Zamówienia";
         }
 
-        private void iconButton4_Click(object sender, EventArgs e)
+        public void iconButtonAccount_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
-            OpenChildForm(new FormSettings());
-            labelTitleChildForm.Text = "Ustawienia";
-        }
-
-        public void iconButton5_Click(object sender, EventArgs e)
-        {
-            if (iconButton5.Text == "Zaloguj")
+            if (isLoggedIn == false)
             {
                 ActivateButton(sender);
                 OpenChildForm(new FormLogIn(this));
                 labelTitleChildForm.Text = "Zaloguj";
             }
-            else if(iconButton5.Text == "Wyloguj")
+            else if(isLoggedIn == true)
             {
                 ActivateButton(sender);
-                OpenChildForm(new FormProfile(this));
-                labelTitleChildForm.Text = "Profil użytkownika";
+                //OpenChildForm(new FormProfile(this));
+                //labelTitleChildForm.Text = "Profil użytkownika";
+                if (panelAccountSubMenu.Visible == false)
+                    panelAccountSubMenu.Visible = true;
             }
             else
             {
@@ -132,6 +137,29 @@ namespace MrRobot
                 OpenChildForm(new FormRegistration(this));
                 labelTitleChildForm.Text = "Rejestracja";
             }
+        }
+
+        private void iconButtonProfile_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormProfile(this));
+            if (panelAccountSubMenu.Visible == true)
+                panelAccountSubMenu.Visible = false;
+            labelTitleChildForm.Text = "Profil";
+            iconCurrentChildForm.IconChar = iconButtonProfile.IconChar;
+        }
+
+        private void iconButtonLogOut_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Pomyślnie wylogowano");
+            isAdmin = false;
+            isLoggedIn = false;
+            ActivateButton(iconButtonAccount);
+            OpenChildForm(new FormLogIn(this));
+            labelTitleChildForm.Text = "Zaloguj";
+            iconButtonAccount.Text = " Zaloguj";
+            login = "";
+            if (panelAccountSubMenu.Visible == true)
+                panelAccountSubMenu.Visible = false;
         }
 
 

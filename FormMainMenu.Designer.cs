@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonProfile = new FontAwesome.Sharp.IconButton();
+            this.iconButtonLogOut = new FontAwesome.Sharp.IconButton();
+            this.iconButtonAccount = new FontAwesome.Sharp.IconButton();
+            this.iconButtonOrders = new FontAwesome.Sharp.IconButton();
+            this.iconButtonCart = new FontAwesome.Sharp.IconButton();
+            this.iconButtonShop = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTitleBar = new System.Windows.Forms.Panel();
@@ -44,6 +45,7 @@
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panelAccountSubMenu = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -51,16 +53,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             this.panelDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelAccountSubMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelMenu.Controls.Add(this.iconButton5);
-            this.panelMenu.Controls.Add(this.iconButton4);
-            this.panelMenu.Controls.Add(this.iconButton3);
-            this.panelMenu.Controls.Add(this.iconButton2);
-            this.panelMenu.Controls.Add(this.iconButton1);
+            this.panelMenu.Controls.Add(this.panelAccountSubMenu);
+            this.panelMenu.Controls.Add(this.iconButtonAccount);
+            this.panelMenu.Controls.Add(this.iconButtonOrders);
+            this.panelMenu.Controls.Add(this.iconButtonCart);
+            this.panelMenu.Controls.Add(this.iconButtonShop);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
@@ -68,125 +71,153 @@
             this.panelMenu.Size = new System.Drawing.Size(220, 674);
             this.panelMenu.TabIndex = 0;
             // 
-            // iconButton5
+            // iconButtonProfile
             // 
-            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.iconButton5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.iconButton5.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton5.IconSize = 36;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(0, 330);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconButton5.Rotation = 0D;
-            this.iconButton5.Size = new System.Drawing.Size(220, 60);
-            this.iconButton5.TabIndex = 5;
-            this.iconButton5.Text = "Zaloguj";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            this.iconButtonProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
+            this.iconButtonProfile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButtonProfile.FlatAppearance.BorderSize = 0;
+            this.iconButtonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonProfile.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.iconButtonProfile.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonProfile.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.iconButtonProfile.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonProfile.IconSize = 36;
+            this.iconButtonProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonProfile.Location = new System.Drawing.Point(0, 60);
+            this.iconButtonProfile.Margin = new System.Windows.Forms.Padding(0);
+            this.iconButtonProfile.Name = "iconButtonProfile";
+            this.iconButtonProfile.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.iconButtonProfile.Rotation = 0D;
+            this.iconButtonProfile.Size = new System.Drawing.Size(220, 60);
+            this.iconButtonProfile.TabIndex = 4;
+            this.iconButtonProfile.Text = " Profil";
+            this.iconButtonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonProfile.UseVisualStyleBackColor = false;
+            this.iconButtonProfile.Click += new System.EventHandler(this.iconButtonProfile_Click);
             // 
-            // iconButton4
+            // iconButtonLogOut
             // 
-            this.iconButton4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton4.FlatAppearance.BorderSize = 0;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.iconButton4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.iconButton4.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton4.IconSize = 36;
-            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(0, 270);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconButton4.Rotation = 0D;
-            this.iconButton4.Size = new System.Drawing.Size(220, 60);
-            this.iconButton4.TabIndex = 4;
-            this.iconButton4.Text = "Ustawienia";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
+            this.iconButtonLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
+            this.iconButtonLogOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButtonLogOut.FlatAppearance.BorderSize = 0;
+            this.iconButtonLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonLogOut.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.iconButtonLogOut.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonLogOut.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.iconButtonLogOut.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonLogOut.IconSize = 36;
+            this.iconButtonLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonLogOut.Location = new System.Drawing.Point(0, 0);
+            this.iconButtonLogOut.Margin = new System.Windows.Forms.Padding(0);
+            this.iconButtonLogOut.Name = "iconButtonLogOut";
+            this.iconButtonLogOut.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.iconButtonLogOut.Rotation = 0D;
+            this.iconButtonLogOut.Size = new System.Drawing.Size(220, 60);
+            this.iconButtonLogOut.TabIndex = 5;
+            this.iconButtonLogOut.Text = " Wyloguj";
+            this.iconButtonLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonLogOut.UseVisualStyleBackColor = false;
+            this.iconButtonLogOut.Click += new System.EventHandler(this.iconButtonLogOut_Click);
             // 
-            // iconButton3
+            // iconButtonAccount
             // 
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.iconButton3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Truck;
-            this.iconButton3.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton3.IconSize = 36;
-            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(0, 210);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconButton3.Rotation = 0D;
-            this.iconButton3.Size = new System.Drawing.Size(220, 60);
-            this.iconButton3.TabIndex = 3;
-            this.iconButton3.Text = "Zamówienia";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
+            this.iconButtonAccount.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButtonAccount.FlatAppearance.BorderSize = 0;
+            this.iconButtonAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonAccount.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.iconButtonAccount.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonAccount.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.iconButtonAccount.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonAccount.IconSize = 36;
+            this.iconButtonAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonAccount.Location = new System.Drawing.Point(0, 270);
+            this.iconButtonAccount.Name = "iconButtonAccount";
+            this.iconButtonAccount.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconButtonAccount.Rotation = 0D;
+            this.iconButtonAccount.Size = new System.Drawing.Size(220, 60);
+            this.iconButtonAccount.TabIndex = 5;
+            this.iconButtonAccount.Text = " Zaloguj";
+            this.iconButtonAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonAccount.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonAccount.UseVisualStyleBackColor = true;
+            this.iconButtonAccount.Click += new System.EventHandler(this.iconButtonAccount_Click);
             // 
-            // iconButton2
+            // iconButtonOrders
             // 
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.iconButton2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
-            this.iconButton2.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton2.IconSize = 36;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 150);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconButton2.Rotation = 0D;
-            this.iconButton2.Size = new System.Drawing.Size(220, 60);
-            this.iconButton2.TabIndex = 2;
-            this.iconButton2.Text = "Koszyk";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            this.iconButtonOrders.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButtonOrders.FlatAppearance.BorderSize = 0;
+            this.iconButtonOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonOrders.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.iconButtonOrders.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonOrders.IconChar = FontAwesome.Sharp.IconChar.Truck;
+            this.iconButtonOrders.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonOrders.IconSize = 36;
+            this.iconButtonOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonOrders.Location = new System.Drawing.Point(0, 210);
+            this.iconButtonOrders.Name = "iconButtonOrders";
+            this.iconButtonOrders.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconButtonOrders.Rotation = 0D;
+            this.iconButtonOrders.Size = new System.Drawing.Size(220, 60);
+            this.iconButtonOrders.TabIndex = 3;
+            this.iconButtonOrders.Text = " Zamówienia";
+            this.iconButtonOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonOrders.UseVisualStyleBackColor = true;
+            this.iconButtonOrders.Click += new System.EventHandler(this.iconButtonOrders_Click);
             // 
-            // iconButton1
+            // iconButtonCart
             // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.iconButton1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Gem;
-            this.iconButton1.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButton1.IconSize = 36;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 90);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(220, 60);
-            this.iconButton1.TabIndex = 1;
-            this.iconButton1.Text = "Sklep";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.iconButtonCart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButtonCart.FlatAppearance.BorderSize = 0;
+            this.iconButtonCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCart.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.iconButtonCart.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonCart.IconChar = FontAwesome.Sharp.IconChar.ShoppingBasket;
+            this.iconButtonCart.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonCart.IconSize = 36;
+            this.iconButtonCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonCart.Location = new System.Drawing.Point(0, 150);
+            this.iconButtonCart.Name = "iconButtonCart";
+            this.iconButtonCart.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconButtonCart.Rotation = 0D;
+            this.iconButtonCart.Size = new System.Drawing.Size(220, 60);
+            this.iconButtonCart.TabIndex = 2;
+            this.iconButtonCart.Text = " Koszyk";
+            this.iconButtonCart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonCart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonCart.UseVisualStyleBackColor = true;
+            this.iconButtonCart.Click += new System.EventHandler(this.iconButtonCart_Click);
+            // 
+            // iconButtonShop
+            // 
+            this.iconButtonShop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButtonShop.FlatAppearance.BorderSize = 0;
+            this.iconButtonShop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonShop.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonShop.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.iconButtonShop.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonShop.IconChar = FontAwesome.Sharp.IconChar.Gem;
+            this.iconButtonShop.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonShop.IconSize = 36;
+            this.iconButtonShop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonShop.Location = new System.Drawing.Point(0, 90);
+            this.iconButtonShop.Name = "iconButtonShop";
+            this.iconButtonShop.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconButtonShop.Rotation = 0D;
+            this.iconButtonShop.Size = new System.Drawing.Size(220, 60);
+            this.iconButtonShop.TabIndex = 1;
+            this.iconButtonShop.Text = " Sklep";
+            this.iconButtonShop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonShop.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonShop.UseVisualStyleBackColor = true;
+            this.iconButtonShop.Click += new System.EventHandler(this.iconButtonShop_Click);
             // 
             // panelLogo
             // 
@@ -329,6 +360,16 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // panelAccountSubMenu
+            // 
+            this.panelAccountSubMenu.Controls.Add(this.iconButtonProfile);
+            this.panelAccountSubMenu.Controls.Add(this.iconButtonLogOut);
+            this.panelAccountSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAccountSubMenu.Location = new System.Drawing.Point(0, 330);
+            this.panelAccountSubMenu.Name = "panelAccountSubMenu";
+            this.panelAccountSubMenu.Size = new System.Drawing.Size(220, 145);
+            this.panelAccountSubMenu.TabIndex = 7;
+            // 
             // FormMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,6 +389,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             this.panelDesktop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panelAccountSubMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -355,13 +397,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panelMenu;
-        public FontAwesome.Sharp.IconButton iconButton1;
+        public FontAwesome.Sharp.IconButton iconButtonShop;
         private System.Windows.Forms.Panel panelLogo;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButtonProfile;
+        private FontAwesome.Sharp.IconButton iconButtonOrders;
+        private FontAwesome.Sharp.IconButton iconButtonCart;
         private System.Windows.Forms.PictureBox pictureBox1;
-        public FontAwesome.Sharp.IconButton iconButton5;
+        public FontAwesome.Sharp.IconButton iconButtonAccount;
         private System.Windows.Forms.Panel panelTitleBar;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         public System.Windows.Forms.Label labelTitleChildForm;
@@ -370,6 +412,8 @@
         private FontAwesome.Sharp.IconButton iconButtonClose;
         private FontAwesome.Sharp.IconButton iconButtonMaximize;
         private FontAwesome.Sharp.IconButton iconButtonMinimize;
+        private FontAwesome.Sharp.IconButton iconButtonLogOut;
+        private System.Windows.Forms.Panel panelAccountSubMenu;
     }
 }
 

@@ -49,11 +49,12 @@ namespace MrRobot
             {
                 if (uzytkownik._isAdmin == true)
                     _form.isAdmin = true;
-                _form.ActivateButton(_form.iconButton1);
+                _form.ActivateButton(_form.iconButtonShop);
                 _form.OpenChildForm(new FormShop());
                 _form.labelTitleChildForm.Text = "Sklep";
-                _form.iconButton5.Text = "Wyloguj";
+                _form.iconButtonAccount.Text = " Konto";
                 _form.login = login;
+                _form.isLoggedIn = true;
             }
             else
             {
@@ -64,10 +65,10 @@ namespace MrRobot
 
         private void button2_Click(object sender, EventArgs e)
         {
-            _form.ActivateButton(_form.iconButton5);
+            _form.ActivateButton(_form.iconButtonAccount);
             _form.OpenChildForm(new FormRegistration(_form));
-            _form.labelTitleChildForm.Text = "Rejestracja";
-            _form.iconButton5.Text = "Zarejestruj";
+            _form.labelTitleChildForm.Text = " Rejestracja";
+            _form.iconButtonAccount.Text = "Zarejestruj";
         }
     }
 }
