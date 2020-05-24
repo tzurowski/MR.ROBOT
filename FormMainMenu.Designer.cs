@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.iconButtonProfile = new FontAwesome.Sharp.IconButton();
+            this.panelAccountSubMenu = new System.Windows.Forms.Panel();
             this.iconButtonLogOut = new FontAwesome.Sharp.IconButton();
+            this.iconButtonProfile = new FontAwesome.Sharp.IconButton();
             this.iconButtonAccount = new FontAwesome.Sharp.IconButton();
             this.iconButtonOrders = new FontAwesome.Sharp.IconButton();
             this.iconButtonCart = new FontAwesome.Sharp.IconButton();
@@ -45,15 +46,14 @@
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panelAccountSubMenu = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
+            this.panelAccountSubMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).BeginInit();
             this.panelDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panelAccountSubMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -67,35 +67,21 @@
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 674);
+            this.panelMenu.Size = new System.Drawing.Size(293, 830);
             this.panelMenu.TabIndex = 0;
             // 
-            // iconButtonProfile
+            // panelAccountSubMenu
             // 
-            this.iconButtonProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
-            this.iconButtonProfile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButtonProfile.FlatAppearance.BorderSize = 0;
-            this.iconButtonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonProfile.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButtonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.iconButtonProfile.ForeColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonProfile.IconChar = FontAwesome.Sharp.IconChar.Cog;
-            this.iconButtonProfile.IconColor = System.Drawing.Color.Gainsboro;
-            this.iconButtonProfile.IconSize = 36;
-            this.iconButtonProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonProfile.Location = new System.Drawing.Point(0, 60);
-            this.iconButtonProfile.Margin = new System.Windows.Forms.Padding(0);
-            this.iconButtonProfile.Name = "iconButtonProfile";
-            this.iconButtonProfile.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.iconButtonProfile.Rotation = 0D;
-            this.iconButtonProfile.Size = new System.Drawing.Size(220, 60);
-            this.iconButtonProfile.TabIndex = 4;
-            this.iconButtonProfile.Text = " Profil";
-            this.iconButtonProfile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonProfile.UseVisualStyleBackColor = false;
-            this.iconButtonProfile.Click += new System.EventHandler(this.iconButtonProfile_Click);
+            this.panelAccountSubMenu.Controls.Add(this.iconButtonLogOut);
+            this.panelAccountSubMenu.Controls.Add(this.iconButtonProfile);
+            this.panelAccountSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAccountSubMenu.Location = new System.Drawing.Point(0, 407);
+            this.panelAccountSubMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelAccountSubMenu.Name = "panelAccountSubMenu";
+            this.panelAccountSubMenu.Size = new System.Drawing.Size(293, 178);
+            this.panelAccountSubMenu.TabIndex = 7;
             // 
             // iconButtonLogOut
             // 
@@ -110,18 +96,43 @@
             this.iconButtonLogOut.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonLogOut.IconSize = 36;
             this.iconButtonLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonLogOut.Location = new System.Drawing.Point(0, 0);
+            this.iconButtonLogOut.Location = new System.Drawing.Point(0, 74);
             this.iconButtonLogOut.Margin = new System.Windows.Forms.Padding(0);
             this.iconButtonLogOut.Name = "iconButtonLogOut";
-            this.iconButtonLogOut.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.iconButtonLogOut.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
             this.iconButtonLogOut.Rotation = 0D;
-            this.iconButtonLogOut.Size = new System.Drawing.Size(220, 60);
-            this.iconButtonLogOut.TabIndex = 5;
-            this.iconButtonLogOut.Text = " Wyloguj";
+            this.iconButtonLogOut.Size = new System.Drawing.Size(293, 74);
+            this.iconButtonLogOut.TabIndex = 4;
+            this.iconButtonLogOut.Text = "Wyloguj";
             this.iconButtonLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonLogOut.UseVisualStyleBackColor = false;
-            this.iconButtonLogOut.Click += new System.EventHandler(this.iconButtonLogOut_Click);
+            this.iconButtonLogOut.Click += new System.EventHandler(this.iconButtonProfile_Click);
+            // 
+            // iconButtonProfile
+            // 
+            this.iconButtonProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
+            this.iconButtonProfile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButtonProfile.FlatAppearance.BorderSize = 0;
+            this.iconButtonProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonProfile.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.iconButtonProfile.ForeColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonProfile.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.iconButtonProfile.IconColor = System.Drawing.Color.Gainsboro;
+            this.iconButtonProfile.IconSize = 36;
+            this.iconButtonProfile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonProfile.Location = new System.Drawing.Point(0, 0);
+            this.iconButtonProfile.Margin = new System.Windows.Forms.Padding(0);
+            this.iconButtonProfile.Name = "iconButtonProfile";
+            this.iconButtonProfile.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.iconButtonProfile.Rotation = 0D;
+            this.iconButtonProfile.Size = new System.Drawing.Size(293, 74);
+            this.iconButtonProfile.TabIndex = 5;
+            this.iconButtonProfile.Text = " Profil";
+            this.iconButtonProfile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonProfile.UseVisualStyleBackColor = false;
+            this.iconButtonProfile.Click += new System.EventHandler(this.iconButtonLogOut_Click);
             // 
             // iconButtonAccount
             // 
@@ -135,11 +146,12 @@
             this.iconButtonAccount.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonAccount.IconSize = 36;
             this.iconButtonAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonAccount.Location = new System.Drawing.Point(0, 270);
+            this.iconButtonAccount.Location = new System.Drawing.Point(0, 333);
+            this.iconButtonAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconButtonAccount.Name = "iconButtonAccount";
-            this.iconButtonAccount.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconButtonAccount.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.iconButtonAccount.Rotation = 0D;
-            this.iconButtonAccount.Size = new System.Drawing.Size(220, 60);
+            this.iconButtonAccount.Size = new System.Drawing.Size(293, 74);
             this.iconButtonAccount.TabIndex = 5;
             this.iconButtonAccount.Text = " Zaloguj";
             this.iconButtonAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -159,11 +171,12 @@
             this.iconButtonOrders.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonOrders.IconSize = 36;
             this.iconButtonOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonOrders.Location = new System.Drawing.Point(0, 210);
+            this.iconButtonOrders.Location = new System.Drawing.Point(0, 259);
+            this.iconButtonOrders.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconButtonOrders.Name = "iconButtonOrders";
-            this.iconButtonOrders.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconButtonOrders.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.iconButtonOrders.Rotation = 0D;
-            this.iconButtonOrders.Size = new System.Drawing.Size(220, 60);
+            this.iconButtonOrders.Size = new System.Drawing.Size(293, 74);
             this.iconButtonOrders.TabIndex = 3;
             this.iconButtonOrders.Text = " Zamówienia";
             this.iconButtonOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -183,11 +196,12 @@
             this.iconButtonCart.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonCart.IconSize = 36;
             this.iconButtonCart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCart.Location = new System.Drawing.Point(0, 150);
+            this.iconButtonCart.Location = new System.Drawing.Point(0, 185);
+            this.iconButtonCart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconButtonCart.Name = "iconButtonCart";
-            this.iconButtonCart.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconButtonCart.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.iconButtonCart.Rotation = 0D;
-            this.iconButtonCart.Size = new System.Drawing.Size(220, 60);
+            this.iconButtonCart.Size = new System.Drawing.Size(293, 74);
             this.iconButtonCart.TabIndex = 2;
             this.iconButtonCart.Text = " Koszyk";
             this.iconButtonCart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -207,11 +221,12 @@
             this.iconButtonShop.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonShop.IconSize = 36;
             this.iconButtonShop.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonShop.Location = new System.Drawing.Point(0, 90);
+            this.iconButtonShop.Location = new System.Drawing.Point(0, 111);
+            this.iconButtonShop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconButtonShop.Name = "iconButtonShop";
-            this.iconButtonShop.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.iconButtonShop.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.iconButtonShop.Rotation = 0D;
-            this.iconButtonShop.Size = new System.Drawing.Size(220, 60);
+            this.iconButtonShop.Size = new System.Drawing.Size(293, 74);
             this.iconButtonShop.TabIndex = 1;
             this.iconButtonShop.Text = " Sklep";
             this.iconButtonShop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -224,16 +239,18 @@
             this.panelLogo.Controls.Add(this.pictureBox1);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(220, 90);
+            this.panelLogo.Size = new System.Drawing.Size(293, 111);
             this.panelLogo.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MrRobot.Properties.Resources.RobotLogo1;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 16);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 20);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 54);
+            this.pictureBox1.Size = new System.Drawing.Size(243, 66);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -248,9 +265,10 @@
             this.panelTitleBar.Controls.Add(this.labelTitleChildForm);
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
+            this.panelTitleBar.Location = new System.Drawing.Point(293, 0);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(874, 90);
+            this.panelTitleBar.Size = new System.Drawing.Size(1166, 111);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -267,10 +285,11 @@
             this.iconButtonMinimize.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonMinimize.IconSize = 24;
             this.iconButtonMinimize.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonMinimize.Location = new System.Drawing.Point(775, -1);
+            this.iconButtonMinimize.Location = new System.Drawing.Point(1034, -1);
+            this.iconButtonMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconButtonMinimize.Name = "iconButtonMinimize";
             this.iconButtonMinimize.Rotation = 0D;
-            this.iconButtonMinimize.Size = new System.Drawing.Size(33, 33);
+            this.iconButtonMinimize.Size = new System.Drawing.Size(44, 41);
             this.iconButtonMinimize.TabIndex = 9;
             this.iconButtonMinimize.UseVisualStyleBackColor = true;
             this.iconButtonMinimize.Click += new System.EventHandler(this.iconButtonMinimize_Click);
@@ -288,10 +307,11 @@
             this.iconButtonMaximize.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonMaximize.IconSize = 24;
             this.iconButtonMaximize.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonMaximize.Location = new System.Drawing.Point(809, -1);
+            this.iconButtonMaximize.Location = new System.Drawing.Point(1080, -1);
+            this.iconButtonMaximize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconButtonMaximize.Name = "iconButtonMaximize";
             this.iconButtonMaximize.Rotation = 0D;
-            this.iconButtonMaximize.Size = new System.Drawing.Size(33, 33);
+            this.iconButtonMaximize.Size = new System.Drawing.Size(44, 41);
             this.iconButtonMaximize.TabIndex = 8;
             this.iconButtonMaximize.UseVisualStyleBackColor = true;
             this.iconButtonMaximize.Click += new System.EventHandler(this.iconButtonMaximize_Click);
@@ -309,10 +329,11 @@
             this.iconButtonClose.IconColor = System.Drawing.Color.Gainsboro;
             this.iconButtonClose.IconSize = 24;
             this.iconButtonClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonClose.Location = new System.Drawing.Point(842, 0);
+            this.iconButtonClose.Location = new System.Drawing.Point(1124, 0);
+            this.iconButtonClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconButtonClose.Name = "iconButtonClose";
             this.iconButtonClose.Rotation = 0D;
-            this.iconButtonClose.Size = new System.Drawing.Size(33, 33);
+            this.iconButtonClose.Size = new System.Drawing.Size(44, 41);
             this.iconButtonClose.TabIndex = 7;
             this.iconButtonClose.UseVisualStyleBackColor = true;
             this.iconButtonClose.Click += new System.EventHandler(this.iconButtonClose_Click);
@@ -322,9 +343,10 @@
             this.labelTitleChildForm.AutoSize = true;
             this.labelTitleChildForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelTitleChildForm.ForeColor = System.Drawing.Color.White;
-            this.labelTitleChildForm.Location = new System.Drawing.Point(69, 28);
+            this.labelTitleChildForm.Location = new System.Drawing.Point(92, 34);
+            this.labelTitleChildForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTitleChildForm.Name = "labelTitleChildForm";
-            this.labelTitleChildForm.Size = new System.Drawing.Size(170, 29);
+            this.labelTitleChildForm.Size = new System.Drawing.Size(207, 36);
             this.labelTitleChildForm.TabIndex = 6;
             this.labelTitleChildForm.Text = "Strona główna";
             // 
@@ -333,10 +355,11 @@
             this.iconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
             this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.iconCurrentChildForm.IconColor = System.Drawing.Color.White;
-            this.iconCurrentChildForm.IconSize = 40;
-            this.iconCurrentChildForm.Location = new System.Drawing.Point(21, 25);
+            this.iconCurrentChildForm.IconSize = 49;
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(28, 31);
+            this.iconCurrentChildForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconCurrentChildForm.Name = "iconCurrentChildForm";
-            this.iconCurrentChildForm.Size = new System.Drawing.Size(40, 40);
+            this.iconCurrentChildForm.Size = new System.Drawing.Size(53, 49);
             this.iconCurrentChildForm.TabIndex = 0;
             this.iconCurrentChildForm.TabStop = false;
             // 
@@ -344,44 +367,38 @@
             // 
             this.panelDesktop.Controls.Add(this.pictureBox2);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(220, 90);
+            this.panelDesktop.Location = new System.Drawing.Point(293, 111);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(874, 584);
+            this.panelDesktop.Size = new System.Drawing.Size(1166, 719);
             this.panelDesktop.TabIndex = 3;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = global::MrRobot.Properties.Resources.RobotLogoBlack;
-            this.pictureBox2.Location = new System.Drawing.Point(170, 170);
+            this.pictureBox2.Location = new System.Drawing.Point(228, 209);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(537, 197);
+            this.pictureBox2.Size = new System.Drawing.Size(716, 242);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // panelAccountSubMenu
-            // 
-            this.panelAccountSubMenu.Controls.Add(this.iconButtonProfile);
-            this.panelAccountSubMenu.Controls.Add(this.iconButtonLogOut);
-            this.panelAccountSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAccountSubMenu.Location = new System.Drawing.Point(0, 330);
-            this.panelAccountSubMenu.Name = "panelAccountSubMenu";
-            this.panelAccountSubMenu.Size = new System.Drawing.Size(220, 145);
-            this.panelAccountSubMenu.TabIndex = 7;
-            // 
             // FormMainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 674);
+            this.ClientSize = new System.Drawing.Size(1459, 830);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormMainMenu";
             this.Text = "Form1";
             this.panelMenu.ResumeLayout(false);
+            this.panelAccountSubMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTitleBar.ResumeLayout(false);
@@ -389,7 +406,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrentChildForm)).EndInit();
             this.panelDesktop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panelAccountSubMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -399,7 +415,7 @@
         private System.Windows.Forms.Panel panelMenu;
         public FontAwesome.Sharp.IconButton iconButtonShop;
         private System.Windows.Forms.Panel panelLogo;
-        private FontAwesome.Sharp.IconButton iconButtonProfile;
+        private FontAwesome.Sharp.IconButton iconButtonLogOut;
         private FontAwesome.Sharp.IconButton iconButtonOrders;
         private FontAwesome.Sharp.IconButton iconButtonCart;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -412,7 +428,7 @@
         private FontAwesome.Sharp.IconButton iconButtonClose;
         private FontAwesome.Sharp.IconButton iconButtonMaximize;
         private FontAwesome.Sharp.IconButton iconButtonMinimize;
-        private FontAwesome.Sharp.IconButton iconButtonLogOut;
+        private FontAwesome.Sharp.IconButton iconButtonProfile;
         private System.Windows.Forms.Panel panelAccountSubMenu;
     }
 }

@@ -84,7 +84,7 @@ namespace MrRobot
             {
                 if (panelAccountSubMenu.Visible == true)
                     panelAccountSubMenu.Visible = false;
-                if (currentBtn == (IconButton)iconButtonProfile || currentBtn == (IconButton)iconButtonLogOut)
+                if (currentBtn == (IconButton)iconButtonLogOut || currentBtn == (IconButton)iconButtonProfile)
                     currentBtn.BackColor = subMenuColor;
                     
                 else
@@ -145,7 +145,7 @@ namespace MrRobot
             if (panelAccountSubMenu.Visible == true)
                 panelAccountSubMenu.Visible = false;
             labelTitleChildForm.Text = "Profil";
-            iconCurrentChildForm.IconChar = iconButtonProfile.IconChar;
+            iconCurrentChildForm.IconChar = iconButtonLogOut.IconChar;
         }
 
         private void iconButtonLogOut_Click(object sender, EventArgs e)
