@@ -13,20 +13,37 @@ namespace MrRobot
     public partial class FormProduct : Form
     {
         FormMainMenu _form;
-        Produkt _produkt;
-        public FormProduct(Produkt pr, FormMainMenu form)
+        int _idProdukt;
+        public FormProduct(int idProdukt, FormMainMenu form)
         {
             InitializeComponent();
-            _produkt = pr;
             _form = form;
+            _idProdukt = idProdukt;
             ZaladujDane();
 
         }
 
         private void ZaladujDane()
         {
+            Produkt _produkt = new Produkt();
+
+            BazaTableAdapters.ProduktTableAdapter produktTableAdapter = new BazaTableAdapters.ProduktTableAdapter();
+            foreach (Baza.ProduktRow item in produktTableAdapter.GetData().Rows)
+            {
+                if(item.ProdID == _idProdukt)
+                {
+                    _produkt._produktID = item.ProdID;
+                    _produkt._cena = item.ProdCena;
+                    _produkt._kategoria = item.ProdKatID;
+                    _produkt._nazwa = item.ProdNazwa;
+                    _produkt._opis = item.ProdOpis;
+                    _produkt._platforma = item.ProdPlatforma;
+                    _produkt._zdjecie = item.ProdZdjecie.Trim();
+                }
+            }
             Image image = (Image)Properties.Resources.ResourceManager.GetObject($"{_produkt._zdjecie}");
             pictureBoxObrazek.BackgroundImage = image;
+            
             textBoxNazwa.Text = _produkt._nazwa;
             textBoxPlatforma.Text = _produkt._platforma;
             textBoxCena.Text = _produkt._cena.ToString() + " zł";

@@ -145,9 +145,11 @@ namespace MrRobot
         }
         private void PokazProdukt(object sender, EventArgs e)
         {
+            Button btn = (Button)sender;
+            string idProdukt = btn.Name.Replace("btn", "");
             _form.ActivateButton(_form.iconButtonShop);
-            _form.OpenChildForm(new FormProduct(aktualnyProdukt, _form));
-            _form.labelTitleChildForm.Text = aktualnyProdukt._nazwa;
+            _form.OpenChildForm(new FormProduct(int.Parse(idProdukt), _form));
+            //_form.labelTitleChildForm.Text = aktualnyProdukt._nazwa;
         }
 
         private void comboBoxFiltruj_SelectedIndexChanged(object sender, EventArgs e)

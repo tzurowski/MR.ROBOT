@@ -92,10 +92,10 @@
             // 
             this.textBoxOpis.Enabled = false;
             this.textBoxOpis.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxOpis.Location = new System.Drawing.Point(434, 232);
+            this.textBoxOpis.Location = new System.Drawing.Point(433, 232);
             this.textBoxOpis.Multiline = true;
             this.textBoxOpis.Name = "textBoxOpis";
-            this.textBoxOpis.Size = new System.Drawing.Size(323, 228);
+            this.textBoxOpis.Size = new System.Drawing.Size(555, 228);
             this.textBoxOpis.TabIndex = 5;
             this.textBoxOpis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
