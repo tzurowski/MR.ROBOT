@@ -14,11 +14,45 @@ namespace MrRobot
     {
         FormMainMenu _form;
         string nazwa, opis;
+        BazaTableAdapters.KategoriaTableAdapter kategoria = new BazaTableAdapters.KategoriaTableAdapter();
+        Kategoria edytowana = new Kategoria();
         public FormCategory(FormMainMenu form)
         {
             InitializeComponent();
             _form = form;
+            this.buttonEdytujKategorie.Click += new System.EventHandler(this.EdytujKategorie);
         }
+
+        private void EdytujKategorie(object sender, EventArgs e)
+        {
+            UstawDane();
+            Kategoria kat = new Kategoria();
+            foreach (var item in kat.PobierzListeKategorii())
+            {
+                if (item._nazwaKategorii.Trim().ToLower().StartsWith(nazwa.ToLower()))
+                {
+                    edytowana._kategoriaID = item._kategoriaID;
+                    edytowana._nazwaKategorii = item._nazwaKategorii;
+                    edytowana._opisKategorii = item._opisKategorii;
+                }
+            }
+            MessageBox.Show("Podaj nowe dane");
+            buttonEdytujKategorie.Text = "Zatwierdz";
+            this.buttonEdytujKategorie.Click -= new System.EventHandler(this.EdytujKategorie);
+            this.buttonEdytujKategorie.Click += new System.EventHandler(this.ZatwierdzKategorie);
+            
+        }
+
+        private void ZatwierdzKategorie(object sender, EventArgs e)
+        {
+            UstawDane();
+            kategoria.Update(nazwa, opis, edytowana._kategoriaID, edytowana._nazwaKategorii, edytowana._opisKategorii);
+            MessageBox.Show("Pomyślnie zupdateowano");
+            this.buttonEdytujKategorie.Click -= new System.EventHandler(this.ZatwierdzKategorie);
+            this.buttonEdytujKategorie.Click += new System.EventHandler(this.EdytujKategorie);
+
+        }
+
         private void UstawDane()
         {
             nazwa = textBoxNazwaKategorii.Text.Trim();

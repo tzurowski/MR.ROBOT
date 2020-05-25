@@ -36,7 +36,7 @@ namespace MrRobot
         {
             List<Kategoria> listaKategorii = new List<Kategoria>();
             BazaTableAdapters.KategoriaTableAdapter kategorie = new BazaTableAdapters.KategoriaTableAdapter();
-            kategorie.GetData();
+            //kategorie.GetData();
             foreach (Baza.KategoriaRow row in kategorie.GetData().Rows)
             {
                 Kategoria kat = new Kategoria(row.KatNazwa.Trim(), row.KatOpis.Trim());
