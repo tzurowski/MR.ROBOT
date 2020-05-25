@@ -87,6 +87,7 @@
             this.dataGridViewKategorie.RowTemplate.Height = 24;
             this.dataGridViewKategorie.Size = new System.Drawing.Size(505, 289);
             this.dataGridViewKategorie.TabIndex = 25;
+            this.dataGridViewKategorie.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKategorie_CellClick);
             // 
             // buttonSzukajKategorii
             // 

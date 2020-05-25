@@ -13,6 +13,7 @@ namespace MrRobot
     public partial class FormCategory : Form
     {
         FormMainMenu _form;
+        bool isFind = false;
         string nazwa, opis;
         BazaTableAdapters.KategoriaTableAdapter kategoria = new BazaTableAdapters.KategoriaTableAdapter();
         Kategoria edytowana = new Kategoria();
@@ -22,24 +23,42 @@ namespace MrRobot
             _form = form;
             this.buttonEdytujKategorie.Click += new System.EventHandler(this.EdytujKategorie);
         }
-
+        public void UstawPolaDoEdycji()
+        {
+            textBoxNazwaKategorii.Text = edytowana._nazwaKategorii.Trim();
+            textBoxOpis.Text = edytowana._opisKategorii.Trim();
+        }
         private void EdytujKategorie(object sender, EventArgs e)
         {
+            WyswietlListe("");
             UstawDane();
             Kategoria kat = new Kategoria();
             foreach (var item in kat.PobierzListeKategorii())
             {
-                if (item._nazwaKategorii.Trim().ToLower().StartsWith(nazwa.ToLower()))
+                if (item._nazwaKategorii.Trim().ToLower() == nazwa.ToLower())
                 {
                     edytowana._kategoriaID = item._kategoriaID;
                     edytowana._nazwaKategorii = item._nazwaKategorii;
                     edytowana._opisKategorii = item._opisKategorii;
+                    UstawPolaDoEdycji();
+                    isFind = true;
                 }
             }
-            MessageBox.Show("Podaj nowe dane");
-            buttonEdytujKategorie.Text = "Zatwierdz";
-            this.buttonEdytujKategorie.Click -= new System.EventHandler(this.EdytujKategorie);
-            this.buttonEdytujKategorie.Click += new System.EventHandler(this.ZatwierdzKategorie);
+            if(isFind == true)
+            {
+                MessageBox.Show("Podaj nowe dane");
+                textBoxOpis.Enabled = true;
+                buttonEdytujKategorie.Text = "Zatwierdz";
+                this.buttonEdytujKategorie.Click -= new System.EventHandler(this.EdytujKategorie);
+                this.buttonEdytujKategorie.Click += new System.EventHandler(this.ZatwierdzKategorie);
+                UstawPolaDoEdycji();
+                isFind = false;
+            }
+            else
+            {
+                MessageBox.Show("Nie znaleziono takiej kategorii");
+            }
+            
             
         }
 
@@ -48,8 +67,14 @@ namespace MrRobot
             UstawDane();
             kategoria.Update(nazwa, opis, edytowana._kategoriaID, edytowana._nazwaKategorii, edytowana._opisKategorii);
             MessageBox.Show("Pomyślnie zupdateowano");
+            textBoxNazwaKategorii.Text = "";
+            textBoxOpis.Text = "";
+            buttonEdytujKategorie.Text = "Edytuj";
             this.buttonEdytujKategorie.Click -= new System.EventHandler(this.ZatwierdzKategorie);
             this.buttonEdytujKategorie.Click += new System.EventHandler(this.EdytujKategorie);
+            WyswietlListe("");
+
+
 
         }
 
@@ -77,10 +102,14 @@ namespace MrRobot
         }
         private void buttonSzukajKategorii_Click(object sender, EventArgs e)
         {
-            List<Kategoria> list = new List<Kategoria>();
-            list =  PrzeszukajListe(textBoxSzukajKategorii.Text);
-            dataGridViewKategorie.DataSource = list;
+            WyswietlListe(textBoxSzukajKategorii.Text);
+        }
 
+        private void WyswietlListe(string szukany)
+        {
+            List<Kategoria> list = new List<Kategoria>();
+            list = PrzeszukajListe(szukany);
+            dataGridViewKategorie.DataSource = list;
         }
 
         private List<Kategoria> PrzeszukajListe(string text)
@@ -103,6 +132,17 @@ namespace MrRobot
             }
 
             return list;
+        }
+
+        private void dataGridViewKategorie_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            edytowana._kategoriaID = int.Parse(dataGridViewKategorie.Rows[e.RowIndex].Cells[2].Value.ToString());
+            edytowana._nazwaKategorii= dataGridViewKategorie.Rows[e.RowIndex].Cells[0].Value.ToString();
+            edytowana._opisKategorii = dataGridViewKategorie.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+            UstawPolaDoEdycji();
+            textBoxOpis.Enabled = false;
+
         }
 
         private void buttonDodajKategorie_Click(object sender, EventArgs e)
