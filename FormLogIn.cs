@@ -49,6 +49,8 @@ namespace MrRobot
             {
                 if (uzytkownik._isAdmin == true)
                     _form.isAdmin = true;
+                if (uzytkownik._isSeller == true)
+                    _form.isSeller = true;
                 _form.ActivateButton(_form.iconButtonShop);
                 _form.OpenChildForm(new FormShop());
                 _form.labelTitleChildForm.Text = "Sklep";

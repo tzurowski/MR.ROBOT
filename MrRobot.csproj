@@ -62,6 +62,12 @@
     <Compile Include="FormCart.Designer.cs">
       <DependentUpon>FormCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategory.Designer.cs">
+      <DependentUpon>FormCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,12 @@
     <Compile Include="FormRegistration.Designer.cs">
       <DependentUpon>FormRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSeller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSeller.Designer.cs">
+      <DependentUpon>FormSeller.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +128,9 @@
     <Compile Include="Uzytkownik.cs" />
     <Compile Include="WysylanieEMail.cs" />
     <Compile Include="Zamowienie.cs" />
+    <EmbeddedResource Include="FormCategory.resx">
+      <DependentUpon>FormCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogIn.resx">
       <DependentUpon>FormLogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistration.resx">
       <DependentUpon>FormRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSeller.resx">
+      <DependentUpon>FormSeller.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormShop.resx">
       <DependentUpon>FormShop.cs</DependentUpon>

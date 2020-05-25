@@ -18,8 +18,17 @@ namespace MrRobot
             InitializeComponent();
             _form = form;
             label2.Text = _form.login;
-            if (_form.isAdmin == true) button3.Visible = true;
-            
+            if (_form.isAdmin == true) buttonAdminPanel.Visible = true;
+            if (_form.isSeller == true) buttonSellerPanel.Visible = true;
+
+        }
+
+        private void buttonSellerPanel_Click(object sender, EventArgs e)
+        {
+            _form.ActivateButton(_form.iconButtonAccount);
+            _form.OpenChildForm(new FormSeller(_form));
+            _form.labelTitleChildForm.Text = "Panel sprzedawcy";
+            _form.iconButtonAccount.Text = "Konto";
         }
     }
 }

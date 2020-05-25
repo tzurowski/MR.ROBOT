@@ -19,6 +19,7 @@ namespace MrRobot
         private Form currentChildForm;
         public string login = "";
         public bool isAdmin = false;
+        public bool isSeller = false;
         public bool isLoggedIn = false;
         private Color sideMenuColor = Color.FromArgb(51, 51, 76);
         private Color subMenuColor = Color.FromArgb(41, 41, 61);
