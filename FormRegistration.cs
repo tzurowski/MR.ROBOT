@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace MrRobot
 {
     public partial class FormRegistration : Form
@@ -70,6 +72,7 @@ namespace MrRobot
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            nazwaUzytkownika = nazwaUzytkownika + "|" + imie + "|" + nazwisko;
             if(SprawdzFormularz())
             {
                 Gosc nowyUzytkownik = new Gosc(nazwaUzytkownika, haslo, email, ulica, miejscowosc, kodPocztowy);

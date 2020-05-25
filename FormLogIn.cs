@@ -17,6 +17,7 @@ namespace MrRobot
 
         FormMainMenu _form;
         public static bool isLogin = false;
+        string logIn = "";
         public FormLogIn(FormMainMenu form)
         {
             InitializeComponent();
@@ -38,7 +39,9 @@ namespace MrRobot
             tableadapterUzytkownik.GetUser(tableUzytkownik, login, haslo);
             foreach (Baza.UzytkownikRow row in tableUzytkownik.Rows)
             {
-                uzytkownik._login = row.UserLogin;
+                string[] elementy = row.UserLogin.Split('|');
+                logIn = elementy[0];
+                uzytkownik._login = logIn;
                 uzytkownik._haslo = row.UserHaslo;
                 uzytkownik._isAdmin = row.UserAdmin;
                 uzytkownik._isSeller = row.UserSprzedawca;
@@ -55,7 +58,7 @@ namespace MrRobot
                 _form.OpenChildForm(new FormShop());
                 _form.labelTitleChildForm.Text = "Sklep";
                 _form.iconButtonAccount.Text = " Konto";
-                _form.login = login;
+                _form.login = logIn;
                 _form.isLoggedIn = true;
             }
             else
