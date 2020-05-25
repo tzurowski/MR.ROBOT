@@ -154,6 +154,7 @@ namespace MrRobot
             MessageBox.Show("Pomyślnie wylogowano");
             isAdmin = false;
             isLoggedIn = false;
+            isSeller = false;
             ActivateButton(iconButtonAccount);
             OpenChildForm(new FormLogIn(this));
             labelTitleChildForm.Text = "Zaloguj";

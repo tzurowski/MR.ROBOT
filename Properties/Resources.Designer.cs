@@ -73,6 +73,26 @@ namespace MrRobot.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gtaV {
+            get {
+                object obj = ResourceManager.GetObject("gtaV", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Overwatch {
+            get {
+                object obj = ResourceManager.GetObject("Overwatch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RobotLogo {
             get {
                 object obj = ResourceManager.GetObject("RobotLogo", resourceCulture);
@@ -96,6 +116,16 @@ namespace MrRobot.Properties {
         internal static System.Drawing.Bitmap RobotLogoBlack {
             get {
                 object obj = ResourceManager.GetObject("RobotLogoBlack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Valorant {
+            get {
+                object obj = ResourceManager.GetObject("Valorant", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -49,7 +49,7 @@
             this.tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34F));
             this.tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutShopPanel.Size = new System.Drawing.Size(1416, 767);
+            this.tableLayoutShopPanel.Size = new System.Drawing.Size(1124, 767);
             this.tableLayoutShopPanel.TabIndex = 0;
             // 
             // comboBoxFiltruj
@@ -61,7 +61,7 @@
             this.comboBoxFiltruj.Items.AddRange(new object[] {
             "malejaco",
             "rosnaco"});
-            this.comboBoxFiltruj.Location = new System.Drawing.Point(1172, 12);
+            this.comboBoxFiltruj.Location = new System.Drawing.Point(880, 12);
             this.comboBoxFiltruj.Name = "comboBoxFiltruj";
             this.comboBoxFiltruj.Size = new System.Drawing.Size(256, 37);
             this.comboBoxFiltruj.TabIndex = 0;
@@ -71,7 +71,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(851, 15);
+            this.label1.Location = new System.Drawing.Point(559, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(315, 29);
             this.label1.TabIndex = 1;
@@ -81,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1440, 823);
+            this.ClientSize = new System.Drawing.Size(1148, 823);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxFiltruj);
             this.Controls.Add(this.tableLayoutShopPanel);

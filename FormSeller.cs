@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MrRobot.Properties;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +33,7 @@ namespace MrRobot
         }
         public void UstawObrazki()
         {
+            comboBoxObrazki.Items.Clear();
             var images = Properties.Resources.ResourceManager
                        .GetResourceSet(CultureInfo.CurrentCulture, true, true)
                        .Cast<DictionaryEntry>()
