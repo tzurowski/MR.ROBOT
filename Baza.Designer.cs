@@ -2080,6 +2080,8 @@ namespace MrRobot {
             
             private global::System.Data.DataColumn columnZamNagStan;
             
+            private global::System.Data.DataColumn columnUserID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ZamowienieNaglowekDataTable() {
@@ -2147,6 +2149,14 @@ namespace MrRobot {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UserIDColumn {
+                get {
+                    return this.columnUserID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2182,13 +2192,14 @@ namespace MrRobot {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ZamowienieNaglowekRow AddZamowienieNaglowekRow(System.DateTime ZamNagDataZamowienia, decimal ZamNagKwota, string ZamNagStan) {
+            public ZamowienieNaglowekRow AddZamowienieNaglowekRow(System.DateTime ZamNagDataZamowienia, decimal ZamNagKwota, string ZamNagStan, int UserID) {
                 ZamowienieNaglowekRow rowZamowienieNaglowekRow = ((ZamowienieNaglowekRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         ZamNagDataZamowienia,
                         ZamNagKwota,
-                        ZamNagStan};
+                        ZamNagStan,
+                        UserID};
                 rowZamowienieNaglowekRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowZamowienieNaglowekRow);
                 return rowZamowienieNaglowekRow;
@@ -2222,6 +2233,7 @@ namespace MrRobot {
                 this.columnZamNagDataZamowienia = base.Columns["ZamNagDataZamowienia"];
                 this.columnZamNagKwota = base.Columns["ZamNagKwota"];
                 this.columnZamNagStan = base.Columns["ZamNagStan"];
+                this.columnUserID = base.Columns["UserID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2235,6 +2247,8 @@ namespace MrRobot {
                 base.Columns.Add(this.columnZamNagKwota);
                 this.columnZamNagStan = new global::System.Data.DataColumn("ZamNagStan", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnZamNagStan);
+                this.columnUserID = new global::System.Data.DataColumn("UserID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnZamNagID}, true));
                 this.columnZamNagID.AutoIncrement = true;
@@ -2247,6 +2261,7 @@ namespace MrRobot {
                 this.columnZamNagKwota.AllowDBNull = false;
                 this.columnZamNagStan.AllowDBNull = false;
                 this.columnZamNagStan.MaxLength = 50;
+                this.columnUserID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2846,6 +2861,17 @@ namespace MrRobot {
                 }
                 set {
                     this[this.tableZamowienieNaglowek.ZamNagStanColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int UserID {
+                get {
+                    return ((int)(this[this.tableZamowienieNaglowek.UserIDColumn]));
+                }
+                set {
+                    this[this.tableZamowienieNaglowek.UserIDColumn] = value;
                 }
             }
         }
@@ -5148,38 +5174,42 @@ SELECT ZamElemID, ZamElemProdID, ZamElemZamNagID, ZamElemIlosc FROM ZamowienieEl
             tableMapping.ColumnMappings.Add("ZamNagDataZamowienia", "ZamNagDataZamowienia");
             tableMapping.ColumnMappings.Add("ZamNagKwota", "ZamNagKwota");
             tableMapping.ColumnMappings.Add("ZamNagStan", "ZamNagStan");
+            tableMapping.ColumnMappings.Add("UserID", "UserID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ZamowienieNaglowek] WHERE (([ZamNagID] = @Original_ZamNagID) A" +
-                "ND ([ZamNagDataZamowienia] = @Original_ZamNagDataZamowienia) AND ([ZamNagKwota] " +
-                "= @Original_ZamNagKwota) AND ([ZamNagStan] = @Original_ZamNagStan))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[ZamowienieNaglowek] WHERE (([ZamNagID] = @Original_ZamNagID) AND ([ZamNagDataZamowienia] = @Original_ZamNagDataZamowienia) AND ([ZamNagKwota] = @Original_ZamNagKwota) AND ([ZamNagStan] = @Original_ZamNagStan) AND ([UserID] = @Original_UserID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZamNagID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZamNagID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZamNagDataZamowienia", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZamNagDataZamowienia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZamNagKwota", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "ZamNagKwota", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZamNagStan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZamNagStan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ZamowienieNaglowek] ([ZamNagDataZamowienia], [ZamNagKwota], [ZamNagStan]) VALUES (@ZamNagDataZamowienia, @ZamNagKwota, @ZamNagStan);
-SELECT ZamNagID, ZamNagDataZamowienia, ZamNagKwota, ZamNagStan FROM ZamowienieNaglowek WHERE (ZamNagID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ZamowienieNaglowek] ([ZamNagID], [ZamNagDataZamowienia], [ZamNagKwota], [ZamNagStan], [UserID]) VALUES (@ZamNagID, @ZamNagDataZamowienia, @ZamNagKwota, @ZamNagStan, @UserID);
+SELECT ZamNagID, ZamNagDataZamowienia, ZamNagKwota, ZamNagStan, UserID FROM ZamowienieNaglowek WHERE (ZamNagID = @ZamNagID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZamNagID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZamNagID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZamNagDataZamowienia", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZamNagDataZamowienia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZamNagKwota", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "ZamNagKwota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZamNagStan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZamNagStan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ZamowienieNaglowek] SET [ZamNagDataZamowienia] = @ZamNagDataZamowienia, [ZamNagKwota] = @ZamNagKwota, [ZamNagStan] = @ZamNagStan WHERE (([ZamNagID] = @Original_ZamNagID) AND ([ZamNagDataZamowienia] = @Original_ZamNagDataZamowienia) AND ([ZamNagKwota] = @Original_ZamNagKwota) AND ([ZamNagStan] = @Original_ZamNagStan));
-SELECT ZamNagID, ZamNagDataZamowienia, ZamNagKwota, ZamNagStan FROM ZamowienieNaglowek WHERE (ZamNagID = @ZamNagID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ZamowienieNaglowek] SET [ZamNagID] = @ZamNagID, [ZamNagDataZamowienia] = @ZamNagDataZamowienia, [ZamNagKwota] = @ZamNagKwota, [ZamNagStan] = @ZamNagStan, [UserID] = @UserID WHERE (([ZamNagID] = @Original_ZamNagID) AND ([ZamNagDataZamowienia] = @Original_ZamNagDataZamowienia) AND ([ZamNagKwota] = @Original_ZamNagKwota) AND ([ZamNagStan] = @Original_ZamNagStan) AND ([UserID] = @Original_UserID));
+SELECT ZamNagID, ZamNagDataZamowienia, ZamNagKwota, ZamNagStan, UserID FROM ZamowienieNaglowek WHERE (ZamNagID = @ZamNagID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZamNagID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZamNagID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZamNagDataZamowienia", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZamNagDataZamowienia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZamNagKwota", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "ZamNagKwota", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZamNagStan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZamNagStan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZamNagID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZamNagID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZamNagDataZamowienia", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZamNagDataZamowienia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZamNagKwota", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 2, "ZamNagKwota", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZamNagStan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZamNagStan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZamNagID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ZamNagID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5195,8 +5225,8 @@ SELECT ZamNagID, ZamNagDataZamowienia, ZamNagKwota, ZamNagStan FROM ZamowienieNa
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ZamNagID, ZamNagDataZamowienia, ZamNagKwota, ZamNagStan FROM dbo.Zamowieni" +
-                "eNaglowek";
+            this._commandCollection[0].CommandText = "SELECT ZamNagID, ZamNagDataZamowienia, ZamNagKwota, ZamNagStan, UserID FROM dbo.Z" +
+                "amowienieNaglowek";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5257,7 +5287,7 @@ SELECT ZamNagID, ZamNagDataZamowienia, ZamNagKwota, ZamNagStan FROM ZamowienieNa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ZamNagID, System.DateTime Original_ZamNagDataZamowienia, decimal Original_ZamNagKwota, string Original_ZamNagStan) {
+        public virtual int Delete(int Original_ZamNagID, System.DateTime Original_ZamNagDataZamowienia, decimal Original_ZamNagKwota, string Original_ZamNagStan, int Original_UserID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ZamNagID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_ZamNagDataZamowienia));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((decimal)(Original_ZamNagKwota));
@@ -5267,6 +5297,7 @@ SELECT ZamNagID, ZamNagDataZamowienia, ZamNagKwota, ZamNagStan FROM ZamowienieNa
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_ZamNagStan));
             }
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_UserID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5287,15 +5318,17 @@ SELECT ZamNagID, ZamNagDataZamowienia, ZamNagKwota, ZamNagStan FROM ZamowienieNa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime ZamNagDataZamowienia, decimal ZamNagKwota, string ZamNagStan) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(ZamNagDataZamowienia));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(ZamNagKwota));
+        public virtual int Insert(int ZamNagID, System.DateTime ZamNagDataZamowienia, decimal ZamNagKwota, string ZamNagStan, int UserID) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ZamNagID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(ZamNagDataZamowienia));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(ZamNagKwota));
             if ((ZamNagStan == null)) {
                 throw new global::System.ArgumentNullException("ZamNagStan");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(ZamNagStan));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ZamNagStan));
             }
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(UserID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5316,25 +5349,27 @@ SELECT ZamNagID, ZamNagDataZamowienia, ZamNagKwota, ZamNagStan FROM ZamowienieNa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime ZamNagDataZamowienia, decimal ZamNagKwota, string ZamNagStan, int Original_ZamNagID, System.DateTime Original_ZamNagDataZamowienia, decimal Original_ZamNagKwota, string Original_ZamNagStan, int ZamNagID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(ZamNagDataZamowienia));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((decimal)(ZamNagKwota));
+        public virtual int Update(int ZamNagID, System.DateTime ZamNagDataZamowienia, decimal ZamNagKwota, string ZamNagStan, int UserID, int Original_ZamNagID, System.DateTime Original_ZamNagDataZamowienia, decimal Original_ZamNagKwota, string Original_ZamNagStan, int Original_UserID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ZamNagID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(ZamNagDataZamowienia));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(ZamNagKwota));
             if ((ZamNagStan == null)) {
                 throw new global::System.ArgumentNullException("ZamNagStan");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(ZamNagStan));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ZamNagStan));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_ZamNagID));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_ZamNagDataZamowienia));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Original_ZamNagKwota));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(UserID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_ZamNagID));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_ZamNagDataZamowienia));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Original_ZamNagKwota));
             if ((Original_ZamNagStan == null)) {
                 throw new global::System.ArgumentNullException("Original_ZamNagStan");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_ZamNagStan));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_ZamNagStan));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(ZamNagID));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_UserID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5355,8 +5390,8 @@ SELECT ZamNagID, ZamNagDataZamowienia, ZamNagKwota, ZamNagStan FROM ZamowienieNa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime ZamNagDataZamowienia, decimal ZamNagKwota, string ZamNagStan, int Original_ZamNagID, System.DateTime Original_ZamNagDataZamowienia, decimal Original_ZamNagKwota, string Original_ZamNagStan) {
-            return this.Update(ZamNagDataZamowienia, ZamNagKwota, ZamNagStan, Original_ZamNagID, Original_ZamNagDataZamowienia, Original_ZamNagKwota, Original_ZamNagStan, Original_ZamNagID);
+        public virtual int Update(System.DateTime ZamNagDataZamowienia, decimal ZamNagKwota, string ZamNagStan, int UserID, int Original_ZamNagID, System.DateTime Original_ZamNagDataZamowienia, decimal Original_ZamNagKwota, string Original_ZamNagStan, int Original_UserID) {
+            return this.Update(Original_ZamNagID, ZamNagDataZamowienia, ZamNagKwota, ZamNagStan, UserID, Original_ZamNagID, Original_ZamNagDataZamowienia, Original_ZamNagKwota, Original_ZamNagStan, Original_UserID);
         }
     }
     
