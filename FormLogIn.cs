@@ -60,7 +60,7 @@ namespace MrRobot
                 if (uzytkownik._isSeller == true)
                     _form.isSeller = true;
                 _form.ActivateButton(_form.iconButtonShop);
-                _form.OpenChildForm(new FormShop());
+                _form.OpenChildForm(new FormShop(_form));
                 _form.labelTitleChildForm.Text = "Sklep";
                 _form.iconButtonAccount.Text = " Konto";
                 _form.login = logIn;

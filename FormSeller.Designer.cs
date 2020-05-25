@@ -43,10 +43,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxCena = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxZdjecie = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxKategoria = new System.Windows.Forms.ComboBox();
             this.buttonEdytujKategorie = new System.Windows.Forms.Button();
+            this.comboBoxObrazki = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdukty)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,14 +194,6 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Cena";
             // 
-            // textBoxZdjecie
-            // 
-            this.textBoxZdjecie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxZdjecie.Location = new System.Drawing.Point(186, 408);
-            this.textBoxZdjecie.Name = "textBoxZdjecie";
-            this.textBoxZdjecie.Size = new System.Drawing.Size(326, 30);
-            this.textBoxZdjecie.TabIndex = 17;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -232,14 +224,23 @@
             this.buttonEdytujKategorie.UseVisualStyleBackColor = true;
             this.buttonEdytujKategorie.Click += new System.EventHandler(this.buttonEdytujKategorie_Click);
             // 
+            // comboBoxObrazki
+            // 
+            this.comboBoxObrazki.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxObrazki.FormattingEnabled = true;
+            this.comboBoxObrazki.Location = new System.Drawing.Point(186, 408);
+            this.comboBoxObrazki.Name = "comboBoxObrazki";
+            this.comboBoxObrazki.Size = new System.Drawing.Size(326, 33);
+            this.comboBoxObrazki.TabIndex = 20;
+            // 
             // FormSeller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1114, 706);
+            this.Controls.Add(this.comboBoxObrazki);
             this.Controls.Add(this.buttonEdytujKategorie);
             this.Controls.Add(this.comboBoxKategoria);
-            this.Controls.Add(this.textBoxZdjecie);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxCena);
             this.Controls.Add(this.label5);
@@ -281,9 +282,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxCena;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxZdjecie;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxKategoria;
         private System.Windows.Forms.Button buttonEdytujKategorie;
+        private System.Windows.Forms.ComboBox comboBoxObrazki;
     }
 }

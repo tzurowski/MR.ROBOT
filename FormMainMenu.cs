@@ -98,7 +98,7 @@ namespace MrRobot
         private void iconButtonShop_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            OpenChildForm(new FormShop());
+            OpenChildForm(new FormShop(this));
             labelTitleChildForm.Text = "Sklep";
         }
 

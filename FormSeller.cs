@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +28,19 @@ namespace MrRobot
             InitializeComponent();
             _form = form;
             UstawComboBox();
+            UstawObrazki();
+        }
+        public void UstawObrazki()
+        {
+            var images = Properties.Resources.ResourceManager
+                       .GetResourceSet(CultureInfo.CurrentCulture, true, true)
+                       .Cast<DictionaryEntry>()
+                       .Where(x => x.Value.GetType() == typeof(Bitmap))
+                       .Select(x => new { Name = x.Key.ToString(), Image = x.Value })
+                       .ToList();
+            comboBoxObrazki.DataSource = images;
+            comboBoxObrazki.DisplayMember = "Name";
+            comboBoxObrazki.ValueMember = "Image";
         }
 
         private void UstawComboBox()
@@ -118,7 +133,7 @@ namespace MrRobot
             }
 
             textBoxCena.Text = edytowany._cena.ToString();
-            textBoxZdjecie.Text = edytowany._zdjecie;
+            comboBoxObrazki.Text = edytowany._zdjecie;
                 
         }
 
@@ -134,7 +149,7 @@ namespace MrRobot
             textBoxPlatforma.Text = "";
             comboBoxKategoria.Text = "";
             textBoxCena.Text = "";
-            textBoxZdjecie.Text = "";
+            comboBoxObrazki.Text = "";
 
             MessageBox.Show("Pomyślnie edytowano produkt");
 
@@ -153,7 +168,7 @@ namespace MrRobot
             nazwa = textBoxNazwaProduktu.Text.Trim();
             opis = textBoxOpis.Text.Trim();
             platforma = textBoxPlatforma.Text.Trim();
-            zdjecie = textBoxZdjecie.Text.Trim();
+            zdjecie = comboBoxObrazki.Text.Trim();
             cena = decimal.Parse(textBoxCena.Text);
 
             Kategoria kat = new Kategoria();

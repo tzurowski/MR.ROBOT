@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MrRobot
 {
-    class Produkt
+    public class Produkt
     {
         public int _produktID { get; set; }
         public string _nazwa { get; set; }
