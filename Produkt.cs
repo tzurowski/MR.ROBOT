@@ -8,13 +8,13 @@ namespace MrRobot
 {
     class Produkt
     {
-        public int _produktID;
-        public string _nazwa;
-        public int _kategoria;
-        public decimal _cena;
-        public string _platforma;
-        public string _opis;
-        public string _zdjecie;
+        public int _produktID { get; set; }
+        public string _nazwa { get; set; }
+        public int _kategoria { get; set; }
+        public decimal _cena { get; set; }
+        public string _platforma { get; set; }
+        public string _opis { get; set; }
+        public string _zdjecie { get; set; }
 
         public Produkt(string nazwa, int kategoria, decimal cena, string platforma, string opis, string zdjecie)
         {
@@ -25,5 +25,10 @@ namespace MrRobot
             _opis = opis;
             _zdjecie = zdjecie;
         }
+        public Produkt()
+        {
+
+        }
+        
     }
 }

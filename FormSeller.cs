@@ -37,6 +37,51 @@ namespace MrRobot
             comboBoxKategoria.ValueMember = "_nazwaKategorii";
         }
 
+        private List<Produkt> PrzeszukajListe(string text)
+        {
+            Sprzedawca sprz = new Sprzedawca();
+            List<Produkt> list = new List<Produkt>();
+            if (String.IsNullOrEmpty(text))
+            {
+                list = sprz.PobierzListeProduktow();
+            }
+            else
+            {
+                foreach (var produkt in sprz.PobierzListeProduktow())
+                {
+                    if (produkt._nazwa.Trim().StartsWith(text.ToLower()))
+                    {
+                        list.Add(produkt);
+                    }
+                }
+            }
+
+            return list;
+        }
+
+        private void buttonUsunProdukt_Click(object sender, EventArgs e)
+        {
+            //UstawDane();
+            nazwa = textBoxNazwaProduktu.Text.Trim();
+            Sprzedawca sprzedawca = new Sprzedawca();
+            List<Produkt> listaProduktow = sprzedawca.PobierzListeProduktow();
+            foreach (var pro in listaProduktow)
+            {
+                if (pro._nazwa.Trim() == nazwa)
+                {
+                    sprzedawca.UsunProdukt(pro);
+                }
+            }
+            MessageBox.Show("Usunieto produkt");
+        }
+
+        private void buttonSzukajProdukt_Click(object sender, EventArgs e)
+        {
+            List<Produkt> list = new List<Produkt>();
+            list = PrzeszukajListe(textBoxSzukajProduktu.Text);
+            dataGridViewProdukty.DataSource = list;
+        }
+
         private void buttonEdytujKategorie_Click(object sender, EventArgs e)
         {
             _form.ActivateButton(_form.iconButtonAccount);

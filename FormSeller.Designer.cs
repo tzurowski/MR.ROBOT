@@ -32,7 +32,7 @@
             this.buttonUsunProdukt = new System.Windows.Forms.Button();
             this.buttonEdytujProdukt = new System.Windows.Forms.Button();
             this.textBoxSzukajProduktu = new System.Windows.Forms.TextBox();
-            this.buttonSzukajProdukt = new System.Windows.Forms.Button();
+            this.buttonSzukajProduktu = new System.Windows.Forms.Button();
             this.dataGridViewProdukty = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxNazwaProduktu = new System.Windows.Forms.TextBox();
@@ -68,6 +68,7 @@
             this.buttonUsunProdukt.TabIndex = 1;
             this.buttonUsunProdukt.Text = "Usun";
             this.buttonUsunProdukt.UseVisualStyleBackColor = true;
+            this.buttonUsunProdukt.Click += new System.EventHandler(this.buttonUsunProdukt_Click);
             // 
             // buttonEdytujProdukt
             // 
@@ -80,28 +81,32 @@
             // 
             // textBoxSzukajProduktu
             // 
+            this.textBoxSzukajProduktu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSzukajProduktu.Location = new System.Drawing.Point(570, 76);
             this.textBoxSzukajProduktu.Name = "textBoxSzukajProduktu";
-            this.textBoxSzukajProduktu.Size = new System.Drawing.Size(317, 22);
+            this.textBoxSzukajProduktu.Size = new System.Drawing.Size(396, 38);
             this.textBoxSzukajProduktu.TabIndex = 3;
             // 
-            // buttonSzukajProdukt
+            // buttonSzukajProduktu
             // 
-            this.buttonSzukajProdukt.Location = new System.Drawing.Point(905, 68);
-            this.buttonSzukajProdukt.Name = "buttonSzukajProdukt";
-            this.buttonSzukajProdukt.Size = new System.Drawing.Size(103, 38);
-            this.buttonSzukajProdukt.TabIndex = 4;
-            this.buttonSzukajProdukt.Text = "Szukaj";
-            this.buttonSzukajProdukt.UseVisualStyleBackColor = true;
+            this.buttonSzukajProduktu.Location = new System.Drawing.Point(972, 75);
+            this.buttonSzukajProduktu.Name = "buttonSzukajProduktu";
+            this.buttonSzukajProduktu.Size = new System.Drawing.Size(103, 38);
+            this.buttonSzukajProduktu.TabIndex = 4;
+            this.buttonSzukajProduktu.Text = "Szukaj";
+            this.buttonSzukajProduktu.UseVisualStyleBackColor = true;
+            this.buttonSzukajProduktu.Click += new System.EventHandler(this.buttonSzukajProdukt_Click);
             // 
             // dataGridViewProdukty
             // 
+            this.dataGridViewProdukty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewProdukty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProdukty.Location = new System.Drawing.Point(556, 132);
             this.dataGridViewProdukty.Name = "dataGridViewProdukty";
             this.dataGridViewProdukty.RowHeadersWidth = 51;
             this.dataGridViewProdukty.RowTemplate.Height = 24;
-            this.dataGridViewProdukty.Size = new System.Drawing.Size(505, 430);
+            this.dataGridViewProdukty.Size = new System.Drawing.Size(546, 424);
             this.dataGridViewProdukty.TabIndex = 5;
             // 
             // label1
@@ -243,7 +248,7 @@
             this.Controls.Add(this.textBoxNazwaProduktu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewProdukty);
-            this.Controls.Add(this.buttonSzukajProdukt);
+            this.Controls.Add(this.buttonSzukajProduktu);
             this.Controls.Add(this.textBoxSzukajProduktu);
             this.Controls.Add(this.buttonEdytujProdukt);
             this.Controls.Add(this.buttonUsunProdukt);
@@ -262,7 +267,7 @@
         private System.Windows.Forms.Button buttonUsunProdukt;
         private System.Windows.Forms.Button buttonEdytujProdukt;
         private System.Windows.Forms.TextBox textBoxSzukajProduktu;
-        private System.Windows.Forms.Button buttonSzukajProdukt;
+        private System.Windows.Forms.Button buttonSzukajProduktu;
         private System.Windows.Forms.DataGridView dataGridViewProdukty;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxNazwaProduktu;

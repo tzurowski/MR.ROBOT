@@ -8,10 +8,13 @@ namespace MrRobot
 {
     class Zamowienie
     {
-        private List<Produkt> listaProduktow;
+        public List<Produkt> listaProduktow;
 
         private DateTime dataZamowienia;
         private decimal kwota;
         private string status;
+
+        
+
     }
 }

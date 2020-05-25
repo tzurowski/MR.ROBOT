@@ -37,5 +37,18 @@ namespace MrRobot
         {
 
         }
+
+        public List<Produkt> PobierzListeProduktow()
+        {
+            List<Produkt> lista = new List<Produkt>();
+            BazaTableAdapters.ProduktTableAdapter produkty = new BazaTableAdapters.ProduktTableAdapter();
+            foreach (Baza.ProduktRow row in produkty.GetData().Rows)
+            {
+                Produkt produkt = new Produkt(row.ProdNazwa.Trim(), row.ProdKatID, row.ProdCena, row.ProdPlatforma.Trim(), row.ProdOpis.Trim(), row.ProdZdjecie.Trim());
+                produkt._produktID = row.ProdID;
+                lista.Add(produkt);
+            }
+            return lista;
+        }
     }
 }
