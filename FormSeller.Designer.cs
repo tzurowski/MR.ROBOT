@@ -78,13 +78,14 @@
             this.buttonEdytujProdukt.TabIndex = 2;
             this.buttonEdytujProdukt.Text = "Edytuj";
             this.buttonEdytujProdukt.UseVisualStyleBackColor = true;
+            this.buttonEdytujProdukt.Click += new System.EventHandler(this.buttonEdytujProdukt_Click);
             // 
             // textBoxSzukajProduktu
             // 
             this.textBoxSzukajProduktu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSzukajProduktu.Location = new System.Drawing.Point(570, 76);
             this.textBoxSzukajProduktu.Name = "textBoxSzukajProduktu";
-            this.textBoxSzukajProduktu.Size = new System.Drawing.Size(396, 38);
+            this.textBoxSzukajProduktu.Size = new System.Drawing.Size(396, 30);
             this.textBoxSzukajProduktu.TabIndex = 3;
             // 
             // buttonSzukajProduktu
@@ -108,6 +109,7 @@
             this.dataGridViewProdukty.RowTemplate.Height = 24;
             this.dataGridViewProdukty.Size = new System.Drawing.Size(546, 424);
             this.dataGridViewProdukty.TabIndex = 5;
+            this.dataGridViewProdukty.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProdukty_CellClick);
             // 
             // label1
             // 
@@ -131,8 +133,9 @@
             // 
             this.textBoxOpis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxOpis.Location = new System.Drawing.Point(186, 167);
+            this.textBoxOpis.Multiline = true;
             this.textBoxOpis.Name = "textBoxOpis";
-            this.textBoxOpis.Size = new System.Drawing.Size(326, 30);
+            this.textBoxOpis.Size = new System.Drawing.Size(326, 120);
             this.textBoxOpis.TabIndex = 9;
             // 
             // label2
@@ -148,7 +151,7 @@
             // textBoxPlatforma
             // 
             this.textBoxPlatforma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPlatforma.Location = new System.Drawing.Point(186, 204);
+            this.textBoxPlatforma.Location = new System.Drawing.Point(186, 293);
             this.textBoxPlatforma.Name = "textBoxPlatforma";
             this.textBoxPlatforma.Size = new System.Drawing.Size(326, 30);
             this.textBoxPlatforma.TabIndex = 11;
@@ -157,7 +160,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 207);
+            this.label3.Location = new System.Drawing.Point(27, 296);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 25);
             this.label3.TabIndex = 10;
@@ -167,7 +170,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 243);
+            this.label4.Location = new System.Drawing.Point(27, 332);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 25);
             this.label4.TabIndex = 12;
@@ -176,7 +179,7 @@
             // textBoxCena
             // 
             this.textBoxCena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCena.Location = new System.Drawing.Point(186, 280);
+            this.textBoxCena.Location = new System.Drawing.Point(186, 369);
             this.textBoxCena.Name = "textBoxCena";
             this.textBoxCena.Size = new System.Drawing.Size(326, 30);
             this.textBoxCena.TabIndex = 15;
@@ -185,7 +188,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(27, 283);
+            this.label5.Location = new System.Drawing.Point(27, 372);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 25);
             this.label5.TabIndex = 14;
@@ -194,7 +197,7 @@
             // textBoxZdjecie
             // 
             this.textBoxZdjecie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxZdjecie.Location = new System.Drawing.Point(186, 319);
+            this.textBoxZdjecie.Location = new System.Drawing.Point(186, 408);
             this.textBoxZdjecie.Name = "textBoxZdjecie";
             this.textBoxZdjecie.Size = new System.Drawing.Size(326, 30);
             this.textBoxZdjecie.TabIndex = 17;
@@ -203,7 +206,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(27, 322);
+            this.label6.Location = new System.Drawing.Point(27, 411);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 25);
             this.label6.TabIndex = 16;
@@ -213,7 +216,7 @@
             // 
             this.comboBoxKategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKategoria.FormattingEnabled = true;
-            this.comboBoxKategoria.Location = new System.Drawing.Point(186, 240);
+            this.comboBoxKategoria.Location = new System.Drawing.Point(186, 329);
             this.comboBoxKategoria.Name = "comboBoxKategoria";
             this.comboBoxKategoria.Size = new System.Drawing.Size(275, 33);
             this.comboBoxKategoria.TabIndex = 18;
@@ -221,7 +224,7 @@
             // buttonEdytujKategorie
             // 
             this.buttonEdytujKategorie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEdytujKategorie.Location = new System.Drawing.Point(467, 240);
+            this.buttonEdytujKategorie.Location = new System.Drawing.Point(467, 329);
             this.buttonEdytujKategorie.Name = "buttonEdytujKategorie";
             this.buttonEdytujKategorie.Size = new System.Drawing.Size(45, 33);
             this.buttonEdytujKategorie.TabIndex = 19;
