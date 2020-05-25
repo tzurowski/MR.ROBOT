@@ -53,10 +53,6 @@ namespace MrRobot
                     }
                 }
             }
-
-
-            
-
             if(uzytkownik._login != null)
             {
                 if (uzytkownik._isAdmin == true)
