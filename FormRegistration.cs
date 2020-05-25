@@ -62,17 +62,16 @@ namespace MrRobot
         {
             imie = textBoxImie.Text.Trim();
             nazwisko = textBoxNazwisko.Text.Trim();
-            ulica = textBoxNazwisko.Text.Trim();
+            ulica = textBoxUlica.Text.Trim();
             kodPocztowy = textBoxKodPocztowy.Text.Trim();
             miejscowosc = textBoxMiejscowosc.Text.Trim();
-            nazwaUzytkownika = textBoxNazwaUzytkownika.Text.Trim();
+            nazwaUzytkownika = textBoxNazwaUzytkownika.Text.Trim()+ "|" + textBoxImie.Text.Trim() + "|" + textBoxNazwisko.Text.Trim();
             haslo = textBoxHaslo.Text.Trim();
             potwierdzHaslo = textBoxPotwierdzHaslo.Text.Trim();
             email = textBoxEmail.Text.Trim();
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            nazwaUzytkownika = nazwaUzytkownika + "|" + imie + "|" + nazwisko;
             if(SprawdzFormularz())
             {
                 Gosc nowyUzytkownik = new Gosc(nazwaUzytkownika, haslo, email, ulica, miejscowosc, kodPocztowy);

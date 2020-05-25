@@ -36,17 +36,26 @@ namespace MrRobot
             Uzytkownik uzytkownik = new Uzytkownik();
             BazaTableAdapters.UzytkownikTableAdapter tableadapterUzytkownik = new BazaTableAdapters.UzytkownikTableAdapter();
             Baza.UzytkownikDataTable tableUzytkownik = new Baza.UzytkownikDataTable();
-            tableadapterUzytkownik.GetUser(tableUzytkownik, login, haslo);
-            foreach (Baza.UzytkownikRow row in tableUzytkownik.Rows)
+
+            foreach (Baza.UzytkownikRow row in tableadapterUzytkownik.GetData().Rows)
             {
-                string[] elementy = row.UserLogin.Split('|');
-                logIn = elementy[0];
-                uzytkownik._login = logIn;
-                uzytkownik._haslo = row.UserHaslo;
-                uzytkownik._isAdmin = row.UserAdmin;
-                uzytkownik._isSeller = row.UserSprzedawca;
-                uzytkownik._IDAddress = row.IsUserAdrIDNull()?-1:row.UserAdrID;
+                if(row.UserLogin.Trim().StartsWith(login) && row.UserHaslo.Trim() == haslo)
+                {
+                    tableadapterUzytkownik.GetUser(tableUzytkownik, row.UserLogin, haslo);
+                    foreach (Baza.UzytkownikRow item in tableUzytkownik.Rows)
+                    {
+
+                        uzytkownik._login = login;
+                        uzytkownik._haslo = item.UserHaslo;
+                        uzytkownik._isAdmin = item.UserAdmin;
+                        uzytkownik._isSeller = item.UserSprzedawca;
+                        uzytkownik._IDAddress = item.IsUserAdrIDNull() ? -1 : item.UserAdrID;
+                    }
+                }
             }
+
+
+            
 
             if(uzytkownik._login != null)
             {
