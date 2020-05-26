@@ -108,6 +108,7 @@
             this.buttonDodajDoKoszyka.TabIndex = 6;
             this.buttonDodajDoKoszyka.Text = "Dodaj Do Koszyka";
             this.buttonDodajDoKoszyka.UseVisualStyleBackColor = true;
+            this.buttonDodajDoKoszyka.Click += new System.EventHandler(this.buttonDodajDoKoszyka_Click);
             // 
             // buttonWroc
             // 

@@ -13,11 +13,13 @@ namespace MrRobot
     public partial class FormProduct : Form
     {
         FormMainMenu _form;
+        FormShop _formShop;
         int _idProdukt;
-        public FormProduct(int idProdukt, FormMainMenu form)
+        public FormProduct(int idProdukt, FormMainMenu form, FormShop formShop)
         {
             InitializeComponent();
             _form = form;
+            _formShop = formShop;
             _idProdukt = idProdukt;
             ZaladujDane();
 
@@ -69,6 +71,18 @@ namespace MrRobot
             _form.ActivateButton(_form.iconButtonShop);
             _form.OpenChildForm(new FormShop(_form));
             _form.labelTitleChildForm.Text = "Sklep";
+        }
+
+        private void buttonDodajDoKoszyka_Click(object sender, EventArgs e)
+        {
+            _formShop.products.Add(_idProdukt);
+            DialogResult result = MessageBox.Show("Pomyslnie dodano do koszyka, chcesz kontynuowac zakupy?", "Potwierdzenie", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.No)
+            {
+                _form.ActivateButton(_form.iconButtonCart);
+                _form.OpenChildForm(new FormCart(_formShop.products, _form));
+                _form.labelTitleChildForm.Text = "Koszyk";
+            }
         }
     }
 }

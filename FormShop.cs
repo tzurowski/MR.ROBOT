@@ -165,7 +165,7 @@ namespace MrRobot
             Button btn = (Button)sender;
             string idProdukt = btn.Name.Replace("btn", "");
             _form.ActivateButton(_form.iconButtonShop);
-            _form.OpenChildForm(new FormProduct(int.Parse(idProdukt), _form));
+            _form.OpenChildForm(new FormProduct(int.Parse(idProdukt), _form, this));
             //_form.labelTitleChildForm.Text = aktualnyProdukt._nazwa;
         }
 
