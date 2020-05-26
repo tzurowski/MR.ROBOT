@@ -8,11 +8,11 @@ namespace MrRobot
 {
     class Zamowienie
     {
-        public List<Produkt> listaProduktow;
+        public List<Produkt> listaProduktow = new List<Produkt>();
 
-        private DateTime dataZamowienia;
-        private decimal kwota;
-        private string status;
+        public DateTime dataZamowienia;
+        public decimal kwota;
+        public string status;
 
         
 

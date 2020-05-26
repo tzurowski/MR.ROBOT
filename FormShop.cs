@@ -18,6 +18,7 @@ namespace MrRobot
     {
         FormMainMenu _form;
         Produkt aktualnyProdukt = new Produkt();
+        public List<int> products = new List<int>();
         public FormShop(FormMainMenu form)
         {
             InitializeComponent();
@@ -88,9 +89,9 @@ namespace MrRobot
             lblNazwa.Anchor = AnchorStyles.None;
             panel.Controls.Add(lblNazwa, 1, 0);
 
-            //Kategoria label
+            //Cena label
             Label lblCena = new Label();
-            lblCena.Text = cena;
+            lblCena.Text = cena + " zł";
             lblCena.Font = new Font("Times New Roman", 12);
             lblCena.Size = new Size(panel.Width - 85, 30);
             lblCena.Anchor = AnchorStyles.None;
@@ -106,6 +107,7 @@ namespace MrRobot
 
             //Koszyk przycisk
             IconButton iconButton = new IconButton();
+            iconButton.Name = $"iconButton{id}";
             iconButton.IconChar = IconChar.ShoppingCart;
             iconButton.ImageAlign = ContentAlignment.MiddleLeft;
             iconButton.IconSize = (int)(iconButton.Height * 1.65);
@@ -113,6 +115,7 @@ namespace MrRobot
             iconButton.TextAlign = ContentAlignment.MiddleRight;
             iconButton.Text = "DO KOSZYKA";
             iconButton.Dock = DockStyle.Fill;
+            iconButton.Click += DodajDoKoszyka_Click;
             panel.Controls.Add(iconButton, 1, 3);
 
             if (_form.isLoggedIn == false)
@@ -122,6 +125,20 @@ namespace MrRobot
 
             tableLayoutShopPanel.Controls.Add(panel, kolumna, wiersz);
             tableLayoutShopPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+        }
+
+        private void DodajDoKoszyka_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string idProdukt = btn.Name.Replace("iconButton", "");
+            products.Add(int.Parse(idProdukt));
+            DialogResult result = MessageBox.Show("Pomyslnie dodano do koszyka, chcesz kontynuowac zakupy?", "Potwierdzenie", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if(result == DialogResult.No)
+            {
+                _form.ActivateButton(_form.iconButtonCart);
+                _form.OpenChildForm(new FormCart(products, _form));
+                _form.labelTitleChildForm.Text = "Koszyk";
+            }
         }
 
         private List<Produkt> Filtruj(string filtr)

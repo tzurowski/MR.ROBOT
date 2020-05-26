@@ -105,7 +105,7 @@ namespace MrRobot
         private void iconButtonCart_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            OpenChildForm(new FormCart());
+            OpenChildForm(new FormCart(this));
             labelTitleChildForm.Text = "Koszyk";
         }
 

@@ -102,7 +102,7 @@ namespace MrRobot
         private void WyswietlListe(string szukany)
         {
             List<Produkt> list = new List<Produkt>();
-            list = PrzeszukajListe(textBoxSzukajProduktu.Text);
+            list = PrzeszukajListe(szukany);
             dataGridViewProdukty.DataSource = list;
         }
 

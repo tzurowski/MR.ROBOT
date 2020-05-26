@@ -59,12 +59,13 @@ namespace MrRobot
                     _form.isAdmin = true;
                 if (uzytkownik._isSeller == true)
                     _form.isSeller = true;
+
+                _form.isLoggedIn = true;
                 _form.ActivateButton(_form.iconButtonShop);
                 _form.OpenChildForm(new FormShop(_form));
                 _form.labelTitleChildForm.Text = "Sklep";
                 _form.iconButtonAccount.Text = " Konto";
                 _form.login = login;
-                _form.isLoggedIn = true;
             }
             else
             {
