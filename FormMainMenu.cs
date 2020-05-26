@@ -112,7 +112,7 @@ namespace MrRobot
         private void iconButtonOrders_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            OpenChildForm(new FormOrders());
+            OpenChildForm(new FormOrders(this));
             labelTitleChildForm.Text = "Zamówienia";
         }
 
