@@ -22,12 +22,17 @@ namespace MrRobot
             _products = products;
             _form = form;
 
+            buttonDodajZamowienie.Enabled = true;
+            buttonUsunZListy.Enabled = true;
+
             WyswietlListe(_products);
         }
         public FormCart(FormMainMenu form)
         {
             InitializeComponent();
             _form = form;
+            buttonDodajZamowienie.Enabled = false;
+            buttonUsunZListy.Enabled = false;
         }
 
         private void WyswietlListe(List<int> idPr)
