@@ -91,6 +91,7 @@
             this.buttonAdminPanel.Text = "Panel administratora";
             this.buttonAdminPanel.UseVisualStyleBackColor = true;
             this.buttonAdminPanel.Visible = false;
+            this.buttonAdminPanel.Click += new System.EventHandler(this.buttonAdminPanel_Click);
             // 
             // buttonSellerPanel
             // 

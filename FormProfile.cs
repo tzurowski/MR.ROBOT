@@ -38,5 +38,13 @@ namespace MrRobot
             _form.labelTitleChildForm.Text = "Edycja profilu";
             _form.iconButtonAccount.Text = "Konto";
         }
+
+        private void buttonAdminPanel_Click(object sender, EventArgs e)
+        {
+            _form.ActivateButton(_form.iconButtonAccount);
+            _form.OpenChildForm(new FormAdmin(_form));
+            _form.labelTitleChildForm.Text = "Panel administratora";
+            _form.iconButtonAccount.Text = "Konto";
+        }
     }
 }

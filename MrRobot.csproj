@@ -56,6 +56,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Baza.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     <Compile Include="Uzytkownik.cs" />
     <Compile Include="WysylanieEMail.cs" />
     <Compile Include="Zamowienie.cs" />
+    <EmbeddedResource Include="FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCart.resx">
       <DependentUpon>FormCart.cs</DependentUpon>
     </EmbeddedResource>

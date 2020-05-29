@@ -47,6 +47,7 @@
             this.comboBoxKategoria = new System.Windows.Forms.ComboBox();
             this.buttonEdytujKategorie = new System.Windows.Forms.Button();
             this.comboBoxObrazki = new System.Windows.Forms.ComboBox();
+            this.buttonZamowieniaDoRealizacji = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProdukty)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,11 +234,21 @@
             this.comboBoxObrazki.Size = new System.Drawing.Size(326, 33);
             this.comboBoxObrazki.TabIndex = 20;
             // 
+            // buttonZamowieniaDoRealizacji
+            // 
+            this.buttonZamowieniaDoRealizacji.Location = new System.Drawing.Point(12, 12);
+            this.buttonZamowieniaDoRealizacji.Name = "buttonZamowieniaDoRealizacji";
+            this.buttonZamowieniaDoRealizacji.Size = new System.Drawing.Size(394, 33);
+            this.buttonZamowieniaDoRealizacji.TabIndex = 21;
+            this.buttonZamowieniaDoRealizacji.Text = "Przejrzyj zamowienia gotowe do realizacji";
+            this.buttonZamowieniaDoRealizacji.UseVisualStyleBackColor = true;
+            // 
             // FormSeller
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1114, 706);
+            this.Controls.Add(this.buttonZamowieniaDoRealizacji);
             this.Controls.Add(this.comboBoxObrazki);
             this.Controls.Add(this.buttonEdytujKategorie);
             this.Controls.Add(this.comboBoxKategoria);
@@ -286,5 +297,6 @@
         private System.Windows.Forms.ComboBox comboBoxKategoria;
         private System.Windows.Forms.Button buttonEdytujKategorie;
         private System.Windows.Forms.ComboBox comboBoxObrazki;
+        private System.Windows.Forms.Button buttonZamowieniaDoRealizacji;
     }
 }
