@@ -65,7 +65,7 @@ namespace MrRobot
             panel.RowStyles.Add(new RowStyle(SizeType.Percent, 20));
             panel.RowStyles.Add(new RowStyle(SizeType.Percent, 20));
             panel.RowStyles.Add(new RowStyle(SizeType.Percent, 20));
-            panel.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            panel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
             panel.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left);
 
             Image image = (Image)Properties.Resources.ResourceManager.GetObject($"{zdjecie}");
@@ -84,7 +84,7 @@ namespace MrRobot
             //Nazwa label
             Label lblNazwa = new Label();
             lblNazwa.Text = nazwa;
-            lblNazwa.Font = new Font("Times New Roman", 12);
+            lblNazwa.Font = new Font("Bahnschrift", 12);
             lblNazwa.Size = new Size(panel.Width - 85, 50);
             lblNazwa.Anchor = AnchorStyles.None;
             panel.Controls.Add(lblNazwa, 1, 0);
@@ -92,7 +92,7 @@ namespace MrRobot
             //Cena label
             Label lblCena = new Label();
             lblCena.Text = cena + " zł";
-            lblCena.Font = new Font("Times New Roman", 12);
+            lblCena.Font = new Font("Bahnschrift", 12);
             lblCena.Size = new Size(panel.Width - 85, 30);
             lblCena.Anchor = AnchorStyles.None;
             panel.Controls.Add(lblCena, 1, 1);
@@ -100,7 +100,7 @@ namespace MrRobot
             //Kategoria label
             Label lblKategoria = new Label();
             lblKategoria.Text = kategoria;
-            lblKategoria.Font = new Font("Times New Roman", 12);
+            lblKategoria.Font = new Font("Bahnschrift", 12);
             lblKategoria.Size = new Size(panel.Width - 85, 30);
             lblKategoria.Anchor = AnchorStyles.None;
             panel.Controls.Add(lblKategoria, 1, 2);
@@ -110,12 +110,16 @@ namespace MrRobot
             iconButton.Name = $"iconButton{id}";
             iconButton.IconChar = IconChar.ShoppingCart;
             iconButton.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton.IconSize = (int)(iconButton.Height * 1.65);
-            iconButton.Font = new Font("Times New Roman", iconButton.Height / 2);
+            iconButton.IconSize = (int)(iconButton.Height * 1.25);
+            iconButton.Font = new Font("Bahnschrift", iconButton.Height / 2, FontStyle.Bold);
+            iconButton.ForeColor = Color.White;
             iconButton.TextAlign = ContentAlignment.MiddleRight;
             iconButton.Text = "DO KOSZYKA";
             iconButton.Dock = DockStyle.Fill;
             iconButton.Click += DodajDoKoszyka_Click;
+            iconButton.IconColor = Color.White;
+            iconButton.BackColor = Color.FromArgb(255, 0, 150, 136);
+            iconButton.FlatStyle = FlatStyle.Flat;
             panel.Controls.Add(iconButton, 1, 3);
 
             if (_form.isLoggedIn == false)

@@ -28,60 +28,99 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonDodajZamowienie = new System.Windows.Forms.Button();
             this.listBoxProdukty = new System.Windows.Forms.ListBox();
-            this.buttonUsunZListy = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.iconButtonDodajZamowienie = new FontAwesome.Sharp.IconButton();
+            this.iconButtonUsunZListy = new FontAwesome.Sharp.IconButton();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // buttonDodajZamowienie
-            // 
-            this.buttonDodajZamowienie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDodajZamowienie.Location = new System.Drawing.Point(678, 435);
-            this.buttonDodajZamowienie.Name = "buttonDodajZamowienie";
-            this.buttonDodajZamowienie.Size = new System.Drawing.Size(228, 51);
-            this.buttonDodajZamowienie.TabIndex = 1;
-            this.buttonDodajZamowienie.Text = "Dodaj Zamowienie";
-            this.buttonDodajZamowienie.UseVisualStyleBackColor = true;
-            this.buttonDodajZamowienie.Click += new System.EventHandler(this.buttonDodajZamowienie_Click);
             // 
             // listBoxProdukty
             // 
+            this.listBoxProdukty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listBoxProdukty.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxProdukty.FormattingEnabled = true;
-            this.listBoxProdukty.ItemHeight = 42;
-            this.listBoxProdukty.Location = new System.Drawing.Point(415, 90);
+            this.listBoxProdukty.ItemHeight = 36;
+            this.listBoxProdukty.Location = new System.Drawing.Point(23, 20);
+            this.listBoxProdukty.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxProdukty.Name = "listBoxProdukty";
-            this.listBoxProdukty.Size = new System.Drawing.Size(491, 298);
+            this.listBoxProdukty.Size = new System.Drawing.Size(452, 328);
             this.listBoxProdukty.TabIndex = 2;
             // 
-            // buttonUsunZListy
+            // panel1
             // 
-            this.buttonUsunZListy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUsunZListy.Location = new System.Drawing.Point(444, 435);
-            this.buttonUsunZListy.Name = "buttonUsunZListy";
-            this.buttonUsunZListy.Size = new System.Drawing.Size(228, 51);
-            this.buttonUsunZListy.TabIndex = 3;
-            this.buttonUsunZListy.Text = "Usun z listy";
-            this.buttonUsunZListy.UseVisualStyleBackColor = true;
-            this.buttonUsunZListy.Click += new System.EventHandler(this.buttonUsunZListy_Click);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.iconButtonDodajZamowienie);
+            this.panel1.Controls.Add(this.iconButtonUsunZListy);
+            this.panel1.Controls.Add(this.listBoxProdukty);
+            this.panel1.Location = new System.Drawing.Point(192, 101);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(498, 424);
+            this.panel1.TabIndex = 4;
+            // 
+            // iconButtonDodajZamowienie
+            // 
+            this.iconButtonDodajZamowienie.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.iconButtonDodajZamowienie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.iconButtonDodajZamowienie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonDodajZamowienie.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonDodajZamowienie.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.iconButtonDodajZamowienie.ForeColor = System.Drawing.SystemColors.Control;
+            this.iconButtonDodajZamowienie.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.iconButtonDodajZamowienie.IconColor = System.Drawing.Color.White;
+            this.iconButtonDodajZamowienie.IconSize = 24;
+            this.iconButtonDodajZamowienie.Location = new System.Drawing.Point(255, 364);
+            this.iconButtonDodajZamowienie.Margin = new System.Windows.Forms.Padding(0);
+            this.iconButtonDodajZamowienie.Name = "iconButtonDodajZamowienie";
+            this.iconButtonDodajZamowienie.Rotation = 0D;
+            this.iconButtonDodajZamowienie.Size = new System.Drawing.Size(220, 42);
+            this.iconButtonDodajZamowienie.TabIndex = 7;
+            this.iconButtonDodajZamowienie.Text = "Dodaj zamówienie";
+            this.iconButtonDodajZamowienie.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonDodajZamowienie.UseVisualStyleBackColor = true;
+            this.iconButtonDodajZamowienie.Click += new System.EventHandler(this.iconButtonDodajZamowienie_Click);
+            // 
+            // iconButtonUsunZListy
+            // 
+            this.iconButtonUsunZListy.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.iconButtonUsunZListy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.iconButtonUsunZListy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonUsunZListy.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButtonUsunZListy.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.iconButtonUsunZListy.ForeColor = System.Drawing.SystemColors.Control;
+            this.iconButtonUsunZListy.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.iconButtonUsunZListy.IconColor = System.Drawing.Color.White;
+            this.iconButtonUsunZListy.IconSize = 24;
+            this.iconButtonUsunZListy.Location = new System.Drawing.Point(23, 364);
+            this.iconButtonUsunZListy.Margin = new System.Windows.Forms.Padding(0);
+            this.iconButtonUsunZListy.Name = "iconButtonUsunZListy";
+            this.iconButtonUsunZListy.Rotation = 0D;
+            this.iconButtonUsunZListy.Size = new System.Drawing.Size(220, 42);
+            this.iconButtonUsunZListy.TabIndex = 6;
+            this.iconButtonUsunZListy.Text = "Usuń z listy";
+            this.iconButtonUsunZListy.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonUsunZListy.UseVisualStyleBackColor = true;
+            this.iconButtonUsunZListy.Click += new System.EventHandler(this.iconButtonUsunZListy_Click);
             // 
             // FormCart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1022, 562);
-            this.Controls.Add(this.buttonUsunZListy);
-            this.Controls.Add(this.listBoxProdukty);
-            this.Controls.Add(this.buttonDodajZamowienie);
+            this.ClientSize = new System.Drawing.Size(872, 608);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormCart";
             this.Text = "DormCart";
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonDodajZamowienie;
         private System.Windows.Forms.ListBox listBoxProdukty;
-        private System.Windows.Forms.Button buttonUsunZListy;
+        private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconButton iconButtonUsunZListy;
+        private FontAwesome.Sharp.IconButton iconButtonDodajZamowienie;
     }
 }

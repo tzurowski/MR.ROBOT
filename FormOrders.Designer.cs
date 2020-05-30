@@ -41,6 +41,7 @@
             this.dataGridViewZamowienia.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewZamowienia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dataGridViewZamowienia.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dataGridViewZamowienia.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -60,18 +61,20 @@
             this.dataGridViewZamowienia.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewZamowienia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewZamowienia.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewZamowienia.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewZamowienia.Name = "dataGridViewZamowienia";
             this.dataGridViewZamowienia.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridViewZamowienia.RowTemplate.Height = 24;
-            this.dataGridViewZamowienia.Size = new System.Drawing.Size(800, 450);
+            this.dataGridViewZamowienia.Size = new System.Drawing.Size(872, 608);
             this.dataGridViewZamowienia.TabIndex = 0;
             // 
             // FormOrders
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(872, 608);
             this.Controls.Add(this.dataGridViewZamowienia);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormOrders";
             this.Text = "FormOrders";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewZamowienia)).EndInit();

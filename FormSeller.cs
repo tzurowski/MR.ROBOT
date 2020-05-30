@@ -78,7 +78,7 @@ namespace MrRobot
             return list;
         }
 
-        private void buttonUsunProdukt_Click(object sender, EventArgs e)
+        private void iconButtonUsunProdukt_Click(object sender, EventArgs e)
         {
             //UstawDane();
             nazwa = textBoxNazwaProduktu.Text.Trim();
@@ -95,10 +95,12 @@ namespace MrRobot
             WyswietlListe("");
         }
 
-        private void buttonSzukajProdukt_Click(object sender, EventArgs e)
+        private void iconButtonSzukajProdukt_Click(object sender, EventArgs e)
         {
             WyswietlListe(textBoxSzukajProduktu.Text.Trim());
         }
+
+        
         private void WyswietlListe(string szukany)
         {
             List<Produkt> list = new List<Produkt>();
@@ -139,7 +141,7 @@ namespace MrRobot
                 
         }
 
-        private void buttonEdytujProdukt_Click(object sender, EventArgs e)
+        private void iconButtonEdytujProdukt_Click(object sender, EventArgs e)
         {
             UstawDane();
             Sprzedawca produkt = new Sprzedawca();
@@ -156,6 +158,14 @@ namespace MrRobot
             MessageBox.Show("Pomyślnie edytowano produkt");
 
             WyswietlListe("");
+        }
+
+        private void iconButtonWroc_Click(object sender, EventArgs e)
+        {
+            _form.ActivateButton(_form.iconButtonAccount);
+            _form.OpenChildForm(new FormProfile(_form));
+            _form.labelTitleChildForm.Text = "Profil użytkownika";
+            _form.iconButtonAccount.Text = "Konto";
         }
 
         private void buttonEdytujKategorie_Click(object sender, EventArgs e)
@@ -182,7 +192,10 @@ namespace MrRobot
                 }
             }
         }
-        private void buttonDodajProdukt_Click(object sender, EventArgs e)
+
+        
+
+        private void iconButtonDodajProdukt_Click(object sender, EventArgs e)
         {
             UstawDane();
             Sprzedawca sprzedawca = new Sprzedawca();

@@ -21,10 +21,12 @@ namespace MrRobot
             _form = form;
         }
 
-        private void buttonSzukaj_Click(object sender, EventArgs e)
+        private void iconButtonSzukaj_Click(object sender, EventArgs e)
         {
             WyswietlListe(textBoxSzukaj.Text.Trim());
         }
+
+        
         private void WyswietlListe(string szukany)
         {
             List<Uzytkownik> list = new List<Uzytkownik>();
@@ -114,7 +116,66 @@ namespace MrRobot
 
         }
 
-        private void buttonEdytujDane_Click(object sender, EventArgs e)
+        private void WyczyscDane()
+        {
+            textBoxNazwaUzytkownika.Text = "";
+            textBoxHaslo.Text = "";
+            textBoxImie.Text = "";
+            textBoxNazwisko.Text = "";
+            textBoxPotwierdzHaslo.Text = "";
+            textBoxMail.Text = "";
+            comboBoxCzyAdmin.Text = "";
+            comboBoxCzySprzedawca.Text = "";
+            textBoxMiejscowosc.Text = "";
+            textBoxKod.Text = "";
+            textBoxUlica.Text = "";
+        }
+
+        private void iconButtonDodaj_Click(object sender, EventArgs e)
+        {
+            BazaTableAdapters.UzytkownikTableAdapter uzytkownikTableAdapter = new BazaTableAdapters.UzytkownikTableAdapter();
+            string nowyLogin = textBoxNazwaUzytkownika.Text + "|" + textBoxImie.Text + "|" + textBoxNazwisko.Text;
+
+            BazaTableAdapters.AdresTableAdapter insertAdres = new BazaTableAdapters.AdresTableAdapter();
+            insertAdres.Insert(textBoxUlica.Text, textBoxMiejscowosc.Text, textBoxKod.Text);
+
+            foreach (Baza.AdresRow adr in insertAdres.GetData().Rows)
+            {
+                if (textBoxUlica.Text.Trim() == adr.AdrUlica.Trim() && textBoxMiejscowosc.Text.Trim() == adr.AdrNazwa.Trim() && textBoxKod.Text.Trim() == adr.AdrKodPocztowy.Trim())
+                {
+                    uzytkownikTableAdapter.Insert(textBoxMail.Text, textBoxHaslo.Text, bool.Parse(comboBoxCzySprzedawca.Text), bool.Parse(comboBoxCzyAdmin.Text), adr.AdrID, nowyLogin);
+                }
+            }
+            MessageBox.Show("Dodano uzytkownika");
+            WyczyscDane();
+        }
+
+        private void iconButtonUsun_Click(object sender, EventArgs e)
+        {
+            BazaTableAdapters.UzytkownikTableAdapter uzytkownikTableAdapter = new BazaTableAdapters.UzytkownikTableAdapter();
+            string nowyLogin = textBoxNazwaUzytkownika.Text + "|" + textBoxImie.Text + "|" + textBoxNazwisko.Text;
+
+            BazaTableAdapters.AdresTableAdapter deleteAdres = new BazaTableAdapters.AdresTableAdapter();
+            foreach (Baza.UzytkownikRow row in uzytkownikTableAdapter.GetData().Rows)
+            {
+                if (userID == row.UserID)
+                {
+                    foreach (Baza.AdresRow adr in deleteAdres.GetData().Rows)
+                    {
+                        if (userIdAdress == adr.AdrID)
+                        {
+                            deleteAdres.Delete(adr.AdrID, adr.AdrUlica, adr.AdrNazwa, adr.AdrKodPocztowy);
+                        }
+                    }
+                    uzytkownikTableAdapter.Delete(userID, row.UserMail, row.UserHaslo, row.UserSprzedawca, row.UserAdmin, row.UserAdrID, row.UserLogin);
+                }
+            }
+
+            MessageBox.Show("Usunieto uzytkownika");
+            WyczyscDane();
+        }
+
+        private void iconButtonEdytuj_Click(object sender, EventArgs e)
         {
             BazaTableAdapters.UzytkownikTableAdapter uzytkownikTableAdapter = new BazaTableAdapters.UzytkownikTableAdapter();
             string nowyLogin = textBoxNazwaUzytkownika.Text + "|" + textBoxImie.Text + "|" + textBoxNazwisko.Text;
@@ -139,68 +200,14 @@ namespace MrRobot
             }
             MessageBox.Show("Zmieniono dane uzytkownika");
             WyczyscDane();
-
         }
 
-        private void buttonDodaj_Click(object sender, EventArgs e)
+        private void iconButtonWroc_Click(object sender, EventArgs e)
         {
-            BazaTableAdapters.UzytkownikTableAdapter uzytkownikTableAdapter = new BazaTableAdapters.UzytkownikTableAdapter();
-            string nowyLogin = textBoxNazwaUzytkownika.Text + "|" + textBoxImie.Text + "|" + textBoxNazwisko.Text;
-
-            BazaTableAdapters.AdresTableAdapter insertAdres = new BazaTableAdapters.AdresTableAdapter();
-            insertAdres.Insert(textBoxUlica.Text, textBoxMiejscowosc.Text, textBoxKod.Text);
-
-            foreach (Baza.AdresRow adr in insertAdres.GetData().Rows)
-            {
-                if (textBoxUlica.Text.Trim() == adr.AdrUlica.Trim() && textBoxMiejscowosc.Text.Trim() == adr.AdrNazwa.Trim() && textBoxKod.Text.Trim() == adr.AdrKodPocztowy.Trim())
-                {
-                    uzytkownikTableAdapter.Insert(textBoxMail.Text, textBoxHaslo.Text, bool.Parse(comboBoxCzySprzedawca.Text), bool.Parse(comboBoxCzyAdmin.Text), adr.AdrID, nowyLogin);
-                }
-            }
-            MessageBox.Show("Dodano uzytkownika");
-            WyczyscDane();
-
-        }
-
-        private void buttonUsun_Click(object sender, EventArgs e)
-        {
-            BazaTableAdapters.UzytkownikTableAdapter uzytkownikTableAdapter = new BazaTableAdapters.UzytkownikTableAdapter();
-            string nowyLogin = textBoxNazwaUzytkownika.Text + "|" + textBoxImie.Text + "|" + textBoxNazwisko.Text;
-
-            BazaTableAdapters.AdresTableAdapter deleteAdres = new BazaTableAdapters.AdresTableAdapter();
-            foreach(Baza.UzytkownikRow row in uzytkownikTableAdapter.GetData().Rows)
-            {
-                if(userID == row.UserID)
-                {
-                    foreach (Baza.AdresRow adr in deleteAdres.GetData().Rows)
-                    {
-                        if (userIdAdress == adr.AdrID)
-                        {
-                           deleteAdres.Delete(adr.AdrID, adr.AdrUlica, adr.AdrNazwa, adr.AdrKodPocztowy);
-                        }
-                    }
-                    uzytkownikTableAdapter.Delete(userID, row.UserMail, row.UserHaslo, row.UserSprzedawca, row.UserAdmin, row.UserAdrID, row.UserLogin);
-                }
-            }
-
-            MessageBox.Show("Usunieto uzytkownika");
-            WyczyscDane();
-
-        }
-
-        private void WyczyscDane()
-        {
-            textBoxNazwaUzytkownika.Text = "";
-            textBoxHaslo.Text = "";
-            textBoxImie.Text = "";
-            textBoxNazwisko.Text = "";
-            textBoxPotwierdzHaslo.Text = "";
-            textBoxMail.Text = "";
-            comboBoxCzyAdmin.Text = "";
-            comboBoxCzySprzedawca.Text = "";
-            textBoxMiejscowosc.Text = "";
-            textBoxKod.Text = "";
-            textBoxUlica.Text = "";
+            _form.ActivateButton(_form.iconButtonAccount);
+            _form.OpenChildForm(new FormProfile(_form));
+            _form.labelTitleChildForm.Text = "Profil użytkownika";
+            _form.iconButtonAccount.Text = "Konto";
         }
     }
 }

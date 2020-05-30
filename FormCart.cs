@@ -22,8 +22,10 @@ namespace MrRobot
             _products = products;
             _form = form;
 
-            buttonDodajZamowienie.Enabled = true;
-            buttonUsunZListy.Enabled = true;
+            iconButtonDodajZamowienie.Enabled = true;
+            iconButtonUsunZListy.Enabled = true;
+            iconButtonDodajZamowienie.IconColor = Color.White;
+            iconButtonUsunZListy.IconColor = Color.White;
 
             WyswietlListe(_products);
         }
@@ -31,8 +33,10 @@ namespace MrRobot
         {
             InitializeComponent();
             _form = form;
-            buttonDodajZamowienie.Enabled = false;
-            buttonUsunZListy.Enabled = false;
+            iconButtonDodajZamowienie.Enabled = false;
+            iconButtonUsunZListy.Enabled = false;
+            iconButtonDodajZamowienie.IconColor = Color.FromArgb(0, 0, 0);
+            iconButtonUsunZListy.IconColor = Color.FromArgb(0, 0, 0);
         }
 
         private void WyswietlListe(List<int> idPr)
@@ -90,7 +94,14 @@ namespace MrRobot
             
         }
 
-        private void buttonDodajZamowienie_Click(object sender, EventArgs e)
+
+        private void iconButtonUsunZListy_Click(object sender, EventArgs e)
+        {
+            list.RemoveAt(listBoxProdukty.SelectedIndex);
+            listBoxProdukty.Items.Remove(listBoxProdukty.Items[listBoxProdukty.SelectedIndex]);
+        }
+
+        private void iconButtonDodajZamowienie_Click(object sender, EventArgs e)
         {
             Zamowienie zamowienie = new Zamowienie();
             zamowienie.listaProduktow = listBoxProdukty.Items.Cast<Produkt>().ToList();
@@ -116,18 +127,12 @@ namespace MrRobot
             }
             foreach (Baza.ZamowienieNaglowekRow row in zamowienieNaglowekTableAdapter.GetData().Rows)
             {
-                if(row.ZamNagDataZamowienia.ToString().Trim() == zamowienie.dataZamowienia.ToString().Trim())
+                if (row.ZamNagDataZamowienia.ToString().Trim() == zamowienie.dataZamowienia.ToString().Trim())
                 {
                     DodajElementJakoZamowienie(row.ZamNagID);
                 }
             }
             listBoxProdukty.Items.Clear();
-        }
-
-        private void buttonUsunZListy_Click(object sender, EventArgs e)
-        {
-            list.RemoveAt(listBoxProdukty.SelectedIndex);
-            listBoxProdukty.Items.Remove(listBoxProdukty.Items[listBoxProdukty.SelectedIndex]);
         }
     }
 }

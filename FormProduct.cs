@@ -60,20 +60,20 @@ namespace MrRobot
             textBoxOpis.Text = _produkt._opis;
             if(_form.isLoggedIn == false)
             {
-                buttonDodajDoKoszyka.Visible = false;
+                iconButtonDodajDoKoszyka.Visible = false;
+                
             }
 
 
         }
 
-        private void buttonWroc_Click(object sender, EventArgs e)
+        private void iconButtonWroc_Click(object sender, EventArgs e)
         {
             _form.ActivateButton(_form.iconButtonShop);
             _form.OpenChildForm(new FormShop(_form));
             _form.labelTitleChildForm.Text = "Sklep";
         }
-
-        private void buttonDodajDoKoszyka_Click(object sender, EventArgs e)
+        private void iconButtonDodajDoKoszyka_Click(object sender, EventArgs e)
         {
             _formShop.products.Add(_idProdukt);
             DialogResult result = MessageBox.Show("Pomyslnie dodano do koszyka, chcesz kontynuowac zakupy?", "Potwierdzenie", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -83,6 +83,6 @@ namespace MrRobot
                 _form.OpenChildForm(new FormCart(_formShop.products, _form));
                 _form.labelTitleChildForm.Text = "Koszyk";
             }
-        }
+        }  
     }
 }

@@ -16,6 +16,9 @@ namespace MrRobot
     {
         FormMainMenu _form;
         string imie, nazwisko, ulica, kodPocztowy, miejscowosc, nazwaUzytkownika, haslo, potwierdzHaslo, email;
+
+        
+
         public FormRegistration(FormMainMenu form)
         {
             InitializeComponent();
@@ -23,7 +26,7 @@ namespace MrRobot
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void iconButtonWroc_Click(object sender, EventArgs e)
         {
             _form.ActivateButton(_form.iconButtonAccount);
             _form.OpenChildForm(new FormLogIn(_form));
@@ -70,9 +73,10 @@ namespace MrRobot
             potwierdzHaslo = textBoxPotwierdzHaslo.Text.Trim();
             email = textBoxEmail.Text.Trim();
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void iconButtonZarejestruj_Click(object sender, EventArgs e)
         {
-            if(SprawdzFormularz())
+            if (SprawdzFormularz())
             {
                 Gosc nowyUzytkownik = new Gosc(nazwaUzytkownika, haslo, email, ulica, miejscowosc, kodPocztowy);
 
@@ -86,5 +90,6 @@ namespace MrRobot
                 MessageBox.Show("Podano błędne dane!");
             }
         }
+
     }
 }

@@ -22,7 +22,7 @@ namespace MrRobot
             UstawDane();
         }
 
-        private void buttonWroc_Click(object sender, EventArgs e)
+        private void iconButtonWroc_Click(object sender, EventArgs e)
         {
             _form.ActivateButton(_form.iconButtonAccount);
             _form.OpenChildForm(new FormProfile(_form));
@@ -30,11 +30,11 @@ namespace MrRobot
             _form.iconButtonAccount.Text = "Konto";
         }
 
-        private void buttonEdytujProdukt_Click(object sender, EventArgs e)
+        private void iconButtonEdytujProfil_Click(object sender, EventArgs e)
         {
             BazaTableAdapters.UzytkownikTableAdapter uzytkownikTableAdapter = new BazaTableAdapters.UzytkownikTableAdapter();
             string nowyLogin = textBoxNazwaUzytkownika.Text + "|" + textBoxImie.Text + "|" + textBoxNazwisko.Text;
-            if(textBoxHaslo.Text == textBoxPotwierdzHaslo.Text)
+            if (textBoxHaslo.Text == textBoxPotwierdzHaslo.Text)
             {
                 foreach (Baza.UzytkownikRow row in uzytkownikTableAdapter.GetData().Rows)
                 {
@@ -64,9 +64,6 @@ namespace MrRobot
             {
                 MessageBox.Show("Podaj poprawne haslo");
             }
-            
-
-
         }
 
         private void UstawDane()
@@ -110,5 +107,7 @@ namespace MrRobot
 
 
         }
+
+        
     }
 }

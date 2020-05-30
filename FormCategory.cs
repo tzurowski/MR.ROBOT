@@ -21,13 +21,14 @@ namespace MrRobot
         {
             InitializeComponent();
             _form = form;
-            this.buttonEdytujKategorie.Click += new System.EventHandler(this.EdytujKategorie);
+            this.iconButtonEdytujKategorie.Click += new System.EventHandler(this.EdytujKategorie);
         }
         public void UstawPolaDoEdycji()
         {
             textBoxNazwaKategorii.Text = edytowana._nazwaKategorii.Trim();
             textBoxOpis.Text = edytowana._opisKategorii.Trim();
         }
+
         private void EdytujKategorie(object sender, EventArgs e)
         {
             WyswietlListe("");
@@ -44,13 +45,13 @@ namespace MrRobot
                     isFind = true;
                 }
             }
-            if(isFind == true)
+            if (isFind == true)
             {
                 MessageBox.Show("Podaj nowe dane");
                 textBoxOpis.Enabled = true;
-                buttonEdytujKategorie.Text = "Zatwierdz";
-                this.buttonEdytujKategorie.Click -= new System.EventHandler(this.EdytujKategorie);
-                this.buttonEdytujKategorie.Click += new System.EventHandler(this.ZatwierdzKategorie);
+                iconButtonEdytujKategorie.Text = "Zatwierdz";
+                this.iconButtonEdytujKategorie.Click -= new System.EventHandler(this.EdytujKategorie);
+                this.iconButtonEdytujKategorie.Click += new System.EventHandler(this.ZatwierdzKategorie);
                 UstawPolaDoEdycji();
                 isFind = false;
             }
@@ -58,9 +59,8 @@ namespace MrRobot
             {
                 MessageBox.Show("Nie znaleziono takiej kategorii");
             }
-            
-            
         }
+       
 
         private void ZatwierdzKategorie(object sender, EventArgs e)
         {
@@ -69,9 +69,9 @@ namespace MrRobot
             MessageBox.Show("Pomyślnie zupdateowano");
             textBoxNazwaKategorii.Text = "";
             textBoxOpis.Text = "";
-            buttonEdytujKategorie.Text = "Edytuj";
-            this.buttonEdytujKategorie.Click -= new System.EventHandler(this.ZatwierdzKategorie);
-            this.buttonEdytujKategorie.Click += new System.EventHandler(this.EdytujKategorie);
+            iconButtonEdytujKategorie.Text = "Edytuj";
+            this.iconButtonEdytujKategorie.Click -= new System.EventHandler(this.ZatwierdzKategorie);
+            this.iconButtonEdytujKategorie.Click += new System.EventHandler(this.EdytujKategorie);
             WyswietlListe("");
 
 
@@ -84,14 +84,14 @@ namespace MrRobot
             opis = textBoxOpis.Text.Trim();
         }
 
-        private void buttonUsunKategorie_Click(object sender, EventArgs e)
+        private void iconButtonUsunKategorie_Click(object sender, EventArgs e)
         {
             UstawDane();
             Kategoria kat = new Kategoria(nazwa, opis);
             List<Kategoria> listaKategorii = kat.PobierzListeKategorii();
             foreach (var kategoria in listaKategorii)
             {
-                if(kategoria._nazwaKategorii.Trim() == kat._nazwaKategorii.Trim() &&
+                if (kategoria._nazwaKategorii.Trim() == kat._nazwaKategorii.Trim() &&
                     kategoria._opisKategorii.Trim() == kat._opisKategorii.Trim())
                 {
                     kat._kategoriaID = kategoria._kategoriaID;
@@ -100,7 +100,8 @@ namespace MrRobot
             }
             MessageBox.Show("Usunieto kategorie");
         }
-        private void buttonSzukajKategorii_Click(object sender, EventArgs e)
+
+        private void iconButtonSzukajKategorie_Click(object sender, EventArgs e)
         {
             WyswietlListe(textBoxSzukajKategorii.Text);
         }
@@ -145,7 +146,9 @@ namespace MrRobot
 
         }
 
-        private void buttonDodajKategorie_Click(object sender, EventArgs e)
+        
+
+        private void iconButtonDodaj_Click(object sender, EventArgs e)
         {
             UstawDane();
             Kategoria kat = new Kategoria(nazwa, opis);
@@ -154,5 +157,8 @@ namespace MrRobot
                 MessageBox.Show("Dodano kategorie!");
             }
         }
+
+        
+
     }
 }
