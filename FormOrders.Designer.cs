@@ -65,6 +65,7 @@
             this.dataGridViewZamowienia.RowTemplate.Height = 24;
             this.dataGridViewZamowienia.Size = new System.Drawing.Size(800, 450);
             this.dataGridViewZamowienia.TabIndex = 0;
+            this.dataGridViewZamowienia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewZamowienia_CellClick);
             // 
             // FormOrders
             // 

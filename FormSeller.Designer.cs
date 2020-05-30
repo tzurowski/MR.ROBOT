@@ -242,6 +242,7 @@
             this.buttonZamowieniaDoRealizacji.TabIndex = 21;
             this.buttonZamowieniaDoRealizacji.Text = "Przejrzyj zamowienia gotowe do realizacji";
             this.buttonZamowieniaDoRealizacji.UseVisualStyleBackColor = true;
+            this.buttonZamowieniaDoRealizacji.Click += new System.EventHandler(this.buttonZamowieniaDoRealizacji_Click);
             // 
             // FormSeller
             // 

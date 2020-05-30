@@ -55,6 +55,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(438, 377);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
@@ -73,6 +74,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Zrealizowane zamowienia";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -82,6 +84,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Do realizacji";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -155,6 +158,7 @@
             this.button3.TabIndex = 12;
             this.button3.Text = "Zmien status zamowienia";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label6
             // 

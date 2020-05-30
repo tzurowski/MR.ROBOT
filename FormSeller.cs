@@ -158,6 +158,14 @@ namespace MrRobot
             WyswietlListe("");
         }
 
+        private void buttonZamowieniaDoRealizacji_Click(object sender, EventArgs e)
+        {
+            _form.ActivateButton(_form.iconButtonAccount);
+            _form.OpenChildForm(new FormOrderFulfillment(_form));
+            _form.labelTitleChildForm.Text = "Panel realizacji zamówień";
+            _form.iconButtonAccount.Text = "Konto";
+        }
+
         private void buttonEdytujKategorie_Click(object sender, EventArgs e)
         {
             _form.ActivateButton(_form.iconButtonAccount);
