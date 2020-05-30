@@ -122,7 +122,7 @@ namespace MrRobot
                 if (_form.login == elementy[0])
                 {
                     zamowienieNaglowekTableAdapter.Insert(zamowienie.dataZamowienia, zamowienie.kwota, zamowienie.status, row.UserID);
-                    MessageBox.Show("Dodano zamówienie do wykonania");
+                    MessageBox.Show("Dodano zamówienie do wykonania", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
             foreach (Baza.ZamowienieNaglowekRow row in zamowienieNaglowekTableAdapter.GetData().Rows)

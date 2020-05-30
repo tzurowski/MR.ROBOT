@@ -47,7 +47,7 @@ namespace MrRobot
             }
             if (isFind == true)
             {
-                MessageBox.Show("Podaj nowe dane");
+                MessageBox.Show("Podaj nowe dane","Uwaga!",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 textBoxOpis.Enabled = true;
                 iconButtonEdytujKategorie.Text = "Zatwierdz";
                 this.iconButtonEdytujKategorie.Click -= new System.EventHandler(this.EdytujKategorie);
@@ -57,7 +57,7 @@ namespace MrRobot
             }
             else
             {
-                MessageBox.Show("Nie znaleziono takiej kategorii");
+                MessageBox.Show("Nie znaleziono takiej kategorii", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
        
@@ -66,16 +66,13 @@ namespace MrRobot
         {
             UstawDane();
             kategoria.Update(nazwa, opis, edytowana._kategoriaID, edytowana._nazwaKategorii, edytowana._opisKategorii);
-            MessageBox.Show("Pomyślnie zupdateowano");
+            MessageBox.Show("Pomyślnie zaktualizowano", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             textBoxNazwaKategorii.Text = "";
             textBoxOpis.Text = "";
             iconButtonEdytujKategorie.Text = "Edytuj";
             this.iconButtonEdytujKategorie.Click -= new System.EventHandler(this.ZatwierdzKategorie);
             this.iconButtonEdytujKategorie.Click += new System.EventHandler(this.EdytujKategorie);
             WyswietlListe("");
-
-
-
         }
 
         private void UstawDane()
@@ -98,7 +95,7 @@ namespace MrRobot
                     kat.UsunKategorie(kat);
                 }
             }
-            MessageBox.Show("Usunieto kategorie");
+            MessageBox.Show("Usunieto kategorię", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private void iconButtonSzukajKategorie_Click(object sender, EventArgs e)
@@ -143,7 +140,6 @@ namespace MrRobot
 
             UstawPolaDoEdycji();
             textBoxOpis.Enabled = false;
-
         }
 
         
@@ -154,11 +150,8 @@ namespace MrRobot
             Kategoria kat = new Kategoria(nazwa, opis);
             if (kat.DodajKategorie())
             {
-                MessageBox.Show("Dodano kategorie!");
+                MessageBox.Show("Dodano kategorię", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
         }
-
-        
-
     }
 }

@@ -69,7 +69,7 @@ namespace MrRobot
             }
             else
             {
-                MessageBox.Show("Podano błędne dane");
+                MessageBox.Show("Podano błędne dane", "Uwaga!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }

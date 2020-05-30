@@ -82,12 +82,12 @@ namespace MrRobot
 
                 if (nowyUzytkownik.Rejestracja())
                 {
-                    MessageBox.Show("Zarejestrowano sie poprawnie");
+                    MessageBox.Show("Zarejestrowano sie poprawnie", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
             else
             {
-                MessageBox.Show("Podano błędne dane!");
+                MessageBox.Show("Podano błędne dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

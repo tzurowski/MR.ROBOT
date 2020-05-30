@@ -146,7 +146,7 @@ namespace MrRobot
                     uzytkownikTableAdapter.Insert(textBoxMail.Text, textBoxHaslo.Text, bool.Parse(comboBoxCzySprzedawca.Text), bool.Parse(comboBoxCzyAdmin.Text), adr.AdrID, nowyLogin);
                 }
             }
-            MessageBox.Show("Dodano uzytkownika");
+            MessageBox.Show("Dodano uzytkownika", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             WyczyscDane();
         }
 
@@ -171,7 +171,7 @@ namespace MrRobot
                 }
             }
 
-            MessageBox.Show("Usunieto uzytkownika");
+            MessageBox.Show("Usunieto uzytkownika", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             WyczyscDane();
         }
 
@@ -198,7 +198,7 @@ namespace MrRobot
                     }
                 }
             }
-            MessageBox.Show("Zmieniono dane uzytkownika");
+            MessageBox.Show("Zmieniono dane uzytkownika", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             WyczyscDane();
         }
 

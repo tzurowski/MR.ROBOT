@@ -54,7 +54,7 @@ namespace MrRobot
                         }
                     }
                 }
-                MessageBox.Show("Poprawnie zmieniono dane");
+                MessageBox.Show("Pomyślnie zmieniono dane","Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 _form.ActivateButton(_form.iconButtonAccount);
                 _form.OpenChildForm(new FormProfile(_form));
                 _form.labelTitleChildForm.Text = "Profil użytkownika";
@@ -62,7 +62,7 @@ namespace MrRobot
             }
             else
             {
-                MessageBox.Show("Podaj poprawne haslo");
+                MessageBox.Show("Podaj poprawne haslo","Uwaga!",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

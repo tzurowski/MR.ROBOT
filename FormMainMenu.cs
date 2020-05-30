@@ -131,6 +131,7 @@ namespace MrRobot
                 //labelTitleChildForm.Text = "Profil użytkownika";
                 if (panelAccountSubMenu.Visible == false)
                     panelAccountSubMenu.Visible = true;
+                labelTitleChildForm.Text = "Konto";
             }
             else
             {
@@ -146,12 +147,12 @@ namespace MrRobot
             if (panelAccountSubMenu.Visible == true)
                 panelAccountSubMenu.Visible = false;
             labelTitleChildForm.Text = "Profil";
-            iconCurrentChildForm.IconChar = iconButtonLogOut.IconChar;
+            iconCurrentChildForm.IconChar = iconButtonProfile.IconChar;
         }
 
         private void iconButtonLogOut_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Pomyślnie wylogowano");
+            MessageBox.Show("Pomyślnie wylogowano","Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             isAdmin = false;
             isLoggedIn = false;
             isSeller = false;

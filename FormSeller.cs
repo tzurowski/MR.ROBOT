@@ -91,7 +91,7 @@ namespace MrRobot
                     sprzedawca.UsunProdukt(pro);
                 }
             }
-            MessageBox.Show("Usunieto produkt");
+            MessageBox.Show("Usunieto produkt", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             WyswietlListe("");
         }
 
@@ -155,7 +155,7 @@ namespace MrRobot
             textBoxCena.Text = "";
             comboBoxObrazki.Text = "";
 
-            MessageBox.Show("Pomyślnie edytowano produkt");
+            MessageBox.Show("Pomyślnie zmieniono dane", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
             WyswietlListe("");
         }
