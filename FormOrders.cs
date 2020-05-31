@@ -28,13 +28,42 @@ namespace MrRobot
                 if (zm.UserID == idUser)
                 {
                     Zamowienie zam = new Zamowienie();
+                    zam.userID = zm.UserID;
+                    zam.zamID = zm.ZamNagID;
                     zam.dataZamowienia = zm.ZamNagDataZamowienia;
                     zam.kwota = zm.ZamNagKwota;
                     zam.status = zm.ZamNagStan;
+                    zam.listaProduktow = PobierzListeProduktow(zm.ZamNagID);
                     list.Add(zam);
                 }
             }
             return list;
+        }
+
+        private List<Produkt> PobierzListeProduktow(int idZamowienia)
+        {
+            List<Produkt> listaZamowionychProduktow = new List<Produkt>();
+
+            BazaTableAdapters.ZamowienieElementTableAdapter zamowienieNaglowekTableAdapter = new BazaTableAdapters.ZamowienieElementTableAdapter();
+            foreach (Baza.ZamowienieElementRow zm in zamowienieNaglowekTableAdapter.GetData().Rows)
+            {
+                if (zm.ZamElemZamNagID == idZamowienia)
+                {
+                    Sprzedawca sprz = new Sprzedawca();
+                    for (int i = 0; i < zm.ZamElemIlosc; i++)
+                    {
+                        foreach (var produkt in sprz.PobierzListeProduktow())
+                        {
+                            if (produkt._produktID == zm.ZamElemProdID)
+                            {
+                                listaZamowionychProduktow.Add(produkt);
+                            }
+                        }
+                    }
+
+                }
+            }
+            return listaZamowionychProduktow;
         }
 
         private void PokazMojeZamowienia()
@@ -113,6 +142,14 @@ namespace MrRobot
                 }
             }
             dataGridViewZamowienia.DataSource = zamowienie;
+        }
+
+        private void dataGridViewZamowienia_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idZamowienia = int.Parse(dataGridViewZamowienia.Rows[e.RowIndex].Cells[0].Value.ToString().Trim());
+            _form.ActivateButton(_form.iconButtonOrders);
+            _form.OpenChildForm(new FormOrderDetails(_form, idZamowienia));
+            _form.labelTitleChildForm.Text = "Szczegoly zamowienia";
         }
     }
 }

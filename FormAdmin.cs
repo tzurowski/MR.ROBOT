@@ -72,7 +72,6 @@ namespace MrRobot
             UstawDane(elementy[0]);
         }
 
-
         private void UstawDane(string login)
         {
             BazaTableAdapters.UzytkownikTableAdapter uzytkownikTableAdapter = new BazaTableAdapters.UzytkownikTableAdapter();

@@ -416,7 +416,7 @@
         public FontAwesome.Sharp.IconButton iconButtonShop;
         private System.Windows.Forms.Panel panelLogo;
         private FontAwesome.Sharp.IconButton iconButtonLogOut;
-        private FontAwesome.Sharp.IconButton iconButtonOrders;
+        public FontAwesome.Sharp.IconButton iconButtonOrders;
         public FontAwesome.Sharp.IconButton iconButtonCart;
         private System.Windows.Forms.PictureBox pictureBox1;
         public FontAwesome.Sharp.IconButton iconButtonAccount;

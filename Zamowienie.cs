@@ -10,6 +10,8 @@ namespace MrRobot
     {
         public List<Produkt> listaProduktow = new List<Produkt>();
 
+        public int zamID { get; set; }
+        public int userID { get; set; }
         public DateTime dataZamowienia { get; set; }
         public decimal kwota { get; set; }
         public string status { get; set; }
