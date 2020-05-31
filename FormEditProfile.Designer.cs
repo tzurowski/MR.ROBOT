@@ -72,6 +72,7 @@
             this.textBoxPotwierdzHaslo.Location = new System.Drawing.Point(227, 317);
             this.textBoxPotwierdzHaslo.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPotwierdzHaslo.Name = "textBoxPotwierdzHaslo";
+            this.textBoxPotwierdzHaslo.PasswordChar = '*';
             this.textBoxPotwierdzHaslo.Size = new System.Drawing.Size(192, 30);
             this.textBoxPotwierdzHaslo.TabIndex = 35;
             // 
@@ -94,6 +95,7 @@
             this.textBoxHaslo.Location = new System.Drawing.Point(227, 280);
             this.textBoxHaslo.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxHaslo.Name = "textBoxHaslo";
+            this.textBoxHaslo.PasswordChar = '*';
             this.textBoxHaslo.Size = new System.Drawing.Size(192, 30);
             this.textBoxHaslo.TabIndex = 33;
             // 
