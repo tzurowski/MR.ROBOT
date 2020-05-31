@@ -134,12 +134,15 @@ namespace MrRobot
 
         private void dataGridViewKategorie_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            edytowana._kategoriaID = int.Parse(dataGridViewKategorie.Rows[e.RowIndex].Cells[2].Value.ToString());
-            edytowana._nazwaKategorii= dataGridViewKategorie.Rows[e.RowIndex].Cells[0].Value.ToString();
-            edytowana._opisKategorii = dataGridViewKategorie.Rows[e.RowIndex].Cells[1].Value.ToString();
+            if (e.RowIndex != -1)
+            {
+                edytowana._kategoriaID = int.Parse(dataGridViewKategorie.Rows[e.RowIndex].Cells[2].Value.ToString());
+                edytowana._nazwaKategorii = dataGridViewKategorie.Rows[e.RowIndex].Cells[0].Value.ToString();
+                edytowana._opisKategorii = dataGridViewKategorie.Rows[e.RowIndex].Cells[1].Value.ToString();
 
-            UstawPolaDoEdycji();
-            textBoxOpis.Enabled = false;
+                UstawPolaDoEdycji();
+                textBoxOpis.Enabled = false;
+            }
         }
 
         

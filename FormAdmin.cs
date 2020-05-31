@@ -68,8 +68,11 @@ namespace MrRobot
 
         private void dataGridViewUzytkownicy_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string[] elementy = dataGridViewUzytkownicy.Rows[e.RowIndex].Cells[0].Value.ToString().Split('|');
-            UstawDane(elementy[0]);
+            if(e.RowIndex != -1)
+            {
+                string[] elementy = dataGridViewUzytkownicy.Rows[e.RowIndex].Cells[0].Value.ToString().Split('|');
+                UstawDane(elementy[0]);
+            }
         }
 
         private void UstawDane(string login)

@@ -119,19 +119,22 @@ namespace MrRobot
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idZam = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString().Trim());
-            foreach (var item in _pelnaLista)
+            if (e.RowIndex != -1)
             {
-                if (item.zamID == idZam)
+                int idZam = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString().Trim());
+                foreach (var item in _pelnaLista)
                 {
-                    userID = item.userID;
-                    textBox1.Text = item.zamID.ToString();
-                    textBox2.Text = PrzeszukajListeUzytkownikow(item.userID);
-                    textBox3.Text = item.kwota.ToString();
-                    dateTimePicker1.Value = item.dataZamowienia;
-                    listBox1.DataSource = item.listaProduktow;
-                    listBox1.DisplayMember = "_nazwa";
-                    listBox1.ValueMember = "_nazwa";
+                    if (item.zamID == idZam)
+                    {
+                        userID = item.userID;
+                        textBox1.Text = item.zamID.ToString();
+                        textBox2.Text = PrzeszukajListeUzytkownikow(item.userID);
+                        textBox3.Text = item.kwota.ToString();
+                        dateTimePicker1.Value = item.dataZamowienia;
+                        listBox1.DataSource = item.listaProduktow;
+                        listBox1.DisplayMember = "_nazwa";
+                        listBox1.ValueMember = "_nazwa";
+                    }
                 }
             }
         }

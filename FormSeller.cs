@@ -110,15 +110,18 @@ namespace MrRobot
 
         private void dataGridViewProdukty_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            edytowany._produktID = int.Parse(dataGridViewProdukty.Rows[e.RowIndex].Cells[0].Value.ToString());
-            edytowany._nazwa = dataGridViewProdukty.Rows[e.RowIndex].Cells[1].Value.ToString();
-            edytowany._kategoria = int.Parse(dataGridViewProdukty.Rows[e.RowIndex].Cells[2].Value.ToString());
-            edytowany._cena = decimal.Parse(dataGridViewProdukty.Rows[e.RowIndex].Cells[3].Value.ToString());
-            edytowany._platforma = dataGridViewProdukty.Rows[e.RowIndex].Cells[4].Value.ToString();
-            edytowany._opis = dataGridViewProdukty.Rows[e.RowIndex].Cells[5].Value.ToString();
-            edytowany._zdjecie = dataGridViewProdukty.Rows[e.RowIndex].Cells[6].Value.ToString();
+            if (e.RowIndex != -1)
+            {
+                edytowany._produktID = int.Parse(dataGridViewProdukty.Rows[e.RowIndex].Cells[0].Value.ToString());
+                edytowany._nazwa = dataGridViewProdukty.Rows[e.RowIndex].Cells[1].Value.ToString();
+                edytowany._kategoria = int.Parse(dataGridViewProdukty.Rows[e.RowIndex].Cells[2].Value.ToString());
+                edytowany._cena = decimal.Parse(dataGridViewProdukty.Rows[e.RowIndex].Cells[3].Value.ToString());
+                edytowany._platforma = dataGridViewProdukty.Rows[e.RowIndex].Cells[4].Value.ToString();
+                edytowany._opis = dataGridViewProdukty.Rows[e.RowIndex].Cells[5].Value.ToString();
+                edytowany._zdjecie = dataGridViewProdukty.Rows[e.RowIndex].Cells[6].Value.ToString();
 
-            UstawPolaDoEdycji();
+                UstawPolaDoEdycji();
+            }
         }
 
         private void UstawPolaDoEdycji()
