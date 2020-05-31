@@ -47,6 +47,12 @@ namespace MrRobot
             return listaZamowionychProduktow;
         }
 
-
+        private void iconButtonWroc_Click(object sender, EventArgs e)
+        {
+            _form.ActivateButton(_form.iconButtonOrders);
+            _form.OpenChildForm(new FormOrders(_form));
+            _form.labelTitleChildForm.Text = "Zamówienia";
+            
+        }
     }
 }

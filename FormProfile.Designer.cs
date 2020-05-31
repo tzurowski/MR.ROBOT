@@ -105,7 +105,7 @@
             this.iconButtonAdminPanel.Text = " Panel administratora";
             this.iconButtonAdminPanel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonAdminPanel.UseVisualStyleBackColor = true;
-            this.iconButtonAdminPanel.Click += new System.EventHandler(this.iconButtonSellerPanel_Click);
+            this.iconButtonAdminPanel.Click += new System.EventHandler(this.iconButtonAdminPanel_Click);
             // 
             // iconButtonSellerPanel
             // 
