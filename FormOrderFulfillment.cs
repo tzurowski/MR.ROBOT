@@ -144,6 +144,7 @@ namespace MrRobot
         {
             BazaTableAdapters.ZamowienieNaglowekTableAdapter zamowienieNaglowekTableAdapter = new BazaTableAdapters.ZamowienieNaglowekTableAdapter();
             zamowienieNaglowekTableAdapter.Update(dateTimePicker1.Value, decimal.Parse(textBox3.Text), "Zrealizowane", userID, int.Parse(textBox1.Text), dateTimePicker1.Value, decimal.Parse(textBox3.Text), "Wysłane do realizacji", userID);
+            dataGridView1.DataSource = PrzeszukajListe("Wysłane do realizacji");
         }
 
         private void iconButtonWroc_Click(object sender, EventArgs e)
