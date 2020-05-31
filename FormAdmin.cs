@@ -19,6 +19,7 @@ namespace MrRobot
         {
             InitializeComponent();
             _form = form;
+            dataGridViewUzytkownicy.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
 
         private void iconButtonSzukaj_Click(object sender, EventArgs e)

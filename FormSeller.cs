@@ -30,6 +30,7 @@ namespace MrRobot
             _form = form;
             UstawComboBox();
             UstawObrazki();
+            dataGridViewProdukty.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
         public void UstawObrazki()
         {

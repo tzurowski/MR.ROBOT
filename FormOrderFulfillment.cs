@@ -22,6 +22,7 @@ namespace MrRobot
             _form = form;
             _pelnaLista = PobierzPelnaListeZamowien();
             dataGridView1.DataSource = _pelnaLista;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
         private List<Zamowienie> PrzeszukajListe(string tekstWyszukiwania)
         {

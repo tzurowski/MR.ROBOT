@@ -134,12 +134,6 @@
     <Compile Include="FormSeller.Designer.cs">
       <DependentUpon>FormSeller.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSettings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSettings.Designer.cs">
-      <DependentUpon>FormSettings.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormShop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,9 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSeller.resx">
       <DependentUpon>FormSeller.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormSettings.resx">
-      <DependentUpon>FormSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormShop.resx">
       <DependentUpon>FormShop.cs</DependentUpon>

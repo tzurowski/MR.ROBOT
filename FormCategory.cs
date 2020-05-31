@@ -22,6 +22,7 @@ namespace MrRobot
             InitializeComponent();
             _form = form;
             this.iconButtonEdytujKategorie.Click += new System.EventHandler(this.EdytujKategorie);
+            dataGridViewKategorie.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
         public void UstawPolaDoEdycji()
         {

@@ -61,21 +61,21 @@
             this.dataGridViewZamowienia.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewZamowienia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewZamowienia.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewZamowienia.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewZamowienia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewZamowienia.Name = "dataGridViewZamowienia";
             this.dataGridViewZamowienia.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridViewZamowienia.RowTemplate.Height = 24;
-            this.dataGridViewZamowienia.Size = new System.Drawing.Size(872, 608);
+            this.dataGridViewZamowienia.Size = new System.Drawing.Size(1163, 748);
             this.dataGridViewZamowienia.TabIndex = 0;
             this.dataGridViewZamowienia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewZamowienia_CellClick);
             // 
             // FormOrders
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 608);
+            this.ClientSize = new System.Drawing.Size(1163, 748);
             this.Controls.Add(this.dataGridViewZamowienia);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormOrders";
             this.Text = "FormOrders";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewZamowienia)).EndInit();

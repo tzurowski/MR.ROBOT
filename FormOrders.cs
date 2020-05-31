@@ -18,6 +18,7 @@ namespace MrRobot
             InitializeComponent();
             _form = form;
             PokazMojeZamowienia();
+            dataGridViewZamowienia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
         }
         private List<Zamowienie> PrzeszukajListe(int idUser)
         {
