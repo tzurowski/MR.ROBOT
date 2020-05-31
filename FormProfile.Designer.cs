@@ -41,10 +41,9 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 30.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(381, 77);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(508, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 49);
+            this.label2.Size = new System.Drawing.Size(138, 62);
             this.label2.TabIndex = 2;
             this.label2.Text = "login";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -53,10 +52,10 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::MrRobot.Properties.Resources._64495;
-            this.pictureBox1.Location = new System.Drawing.Point(340, 141);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(453, 174);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(195, 188);
+            this.pictureBox1.Size = new System.Drawing.Size(260, 231);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -73,11 +72,11 @@
             this.iconButtonEdytujDane.IconColor = System.Drawing.Color.White;
             this.iconButtonEdytujDane.IconSize = 24;
             this.iconButtonEdytujDane.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonEdytujDane.Location = new System.Drawing.Point(340, 348);
+            this.iconButtonEdytujDane.Location = new System.Drawing.Point(453, 428);
             this.iconButtonEdytujDane.Margin = new System.Windows.Forms.Padding(0);
             this.iconButtonEdytujDane.Name = "iconButtonEdytujDane";
             this.iconButtonEdytujDane.Rotation = 0D;
-            this.iconButtonEdytujDane.Size = new System.Drawing.Size(195, 47);
+            this.iconButtonEdytujDane.Size = new System.Drawing.Size(260, 58);
             this.iconButtonEdytujDane.TabIndex = 86;
             this.iconButtonEdytujDane.Text = " Edytuj dane";
             this.iconButtonEdytujDane.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -96,15 +95,16 @@
             this.iconButtonAdminPanel.IconColor = System.Drawing.Color.White;
             this.iconButtonAdminPanel.IconSize = 24;
             this.iconButtonAdminPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonAdminPanel.Location = new System.Drawing.Point(304, 485);
+            this.iconButtonAdminPanel.Location = new System.Drawing.Point(405, 597);
             this.iconButtonAdminPanel.Margin = new System.Windows.Forms.Padding(0);
             this.iconButtonAdminPanel.Name = "iconButtonAdminPanel";
             this.iconButtonAdminPanel.Rotation = 0D;
-            this.iconButtonAdminPanel.Size = new System.Drawing.Size(262, 47);
+            this.iconButtonAdminPanel.Size = new System.Drawing.Size(349, 58);
             this.iconButtonAdminPanel.TabIndex = 87;
             this.iconButtonAdminPanel.Text = " Panel administratora";
             this.iconButtonAdminPanel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonAdminPanel.UseVisualStyleBackColor = true;
+            this.iconButtonAdminPanel.Visible = false;
             this.iconButtonAdminPanel.Click += new System.EventHandler(this.iconButtonAdminPanel_Click);
             // 
             // iconButtonSellerPanel
@@ -119,28 +119,29 @@
             this.iconButtonSellerPanel.IconColor = System.Drawing.Color.White;
             this.iconButtonSellerPanel.IconSize = 24;
             this.iconButtonSellerPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonSellerPanel.Location = new System.Drawing.Point(304, 417);
+            this.iconButtonSellerPanel.Location = new System.Drawing.Point(405, 513);
             this.iconButtonSellerPanel.Margin = new System.Windows.Forms.Padding(0);
             this.iconButtonSellerPanel.Name = "iconButtonSellerPanel";
             this.iconButtonSellerPanel.Rotation = 0D;
-            this.iconButtonSellerPanel.Size = new System.Drawing.Size(262, 47);
+            this.iconButtonSellerPanel.Size = new System.Drawing.Size(349, 58);
             this.iconButtonSellerPanel.TabIndex = 88;
             this.iconButtonSellerPanel.Text = " Panel sprzedawcy";
             this.iconButtonSellerPanel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonSellerPanel.UseVisualStyleBackColor = true;
+            this.iconButtonSellerPanel.Visible = false;
             this.iconButtonSellerPanel.Click += new System.EventHandler(this.iconButtonSellerPanel_Click);
             // 
             // FormProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 608);
+            this.ClientSize = new System.Drawing.Size(1163, 748);
             this.Controls.Add(this.iconButtonSellerPanel);
             this.Controls.Add(this.iconButtonAdminPanel);
             this.Controls.Add(this.iconButtonEdytujDane);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormProfile";
             this.Text = "FormProfile";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
