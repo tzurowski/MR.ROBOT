@@ -231,6 +231,7 @@
             this.buttonZamowieniaDoRealizacji.TabIndex = 21;
             this.buttonZamowieniaDoRealizacji.Text = "Przejrzyj zamowienia do realizacji";
             this.buttonZamowieniaDoRealizacji.UseVisualStyleBackColor = false;
+            this.buttonZamowieniaDoRealizacji.Click += new System.EventHandler(this.buttonZamowieniaDoRealizacji_Click);
             // 
             // iconButtonEdytujProdukt
             // 
