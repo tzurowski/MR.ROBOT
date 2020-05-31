@@ -128,7 +128,7 @@ namespace MrRobot
             }
 
             tableLayoutShopPanel.Controls.Add(panel, kolumna, wiersz);
-            tableLayoutShopPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            //tableLayoutShopPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
         }
 
         private void DodajDoKoszyka_Click(object sender, EventArgs e)

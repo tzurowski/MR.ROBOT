@@ -42,14 +42,14 @@
             this.tableLayoutShopPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutShopPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutShopPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutShopPanel.Location = new System.Drawing.Point(9, 45);
-            this.tableLayoutShopPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutShopPanel.Location = new System.Drawing.Point(12, 55);
+            this.tableLayoutShopPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutShopPanel.Name = "tableLayoutShopPanel";
             this.tableLayoutShopPanel.RowCount = 3;
             this.tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34F));
             this.tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutShopPanel.Size = new System.Drawing.Size(854, 552);
+            this.tableLayoutShopPanel.Size = new System.Drawing.Size(1139, 679);
             this.tableLayoutShopPanel.TabIndex = 0;
             // 
             // comboBoxFiltruj
@@ -61,10 +61,10 @@
             this.comboBoxFiltruj.Items.AddRange(new object[] {
             "malejaco",
             "rosnaco"});
-            this.comboBoxFiltruj.Location = new System.Drawing.Point(671, 10);
-            this.comboBoxFiltruj.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxFiltruj.Location = new System.Drawing.Point(895, 12);
+            this.comboBoxFiltruj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxFiltruj.Name = "comboBoxFiltruj";
-            this.comboBoxFiltruj.Size = new System.Drawing.Size(193, 31);
+            this.comboBoxFiltruj.Size = new System.Drawing.Size(256, 37);
             this.comboBoxFiltruj.TabIndex = 0;
             this.comboBoxFiltruj.SelectedIndexChanged += new System.EventHandler(this.comboBoxFiltruj_SelectedIndexChanged);
             // 
@@ -73,22 +73,21 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 14.25F);
-            this.label1.Location = new System.Drawing.Point(406, 13);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(541, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 23);
+            this.label1.Size = new System.Drawing.Size(319, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Sortuj produkty wedlug ceny";
             // 
             // FormShop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 608);
+            this.ClientSize = new System.Drawing.Size(1163, 748);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxFiltruj);
             this.Controls.Add(this.tableLayoutShopPanel);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormShop";
             this.Text = "FormShop";
             this.ResumeLayout(false);
