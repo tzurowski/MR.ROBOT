@@ -146,10 +146,13 @@ namespace MrRobot
 
         private void dataGridViewZamowienia_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idZamowienia = int.Parse(dataGridViewZamowienia.Rows[e.RowIndex].Cells[0].Value.ToString().Trim());
-            _form.ActivateButton(_form.iconButtonOrders);
-            _form.OpenChildForm(new FormOrderDetails(_form, idZamowienia));
-            _form.labelTitleChildForm.Text = "Szczegoly zamowienia";
+            if (e.RowIndex != -1)
+            {
+                int idZamowienia = int.Parse(dataGridViewZamowienia.Rows[e.RowIndex].Cells[0].Value.ToString().Trim());
+                _form.ActivateButton(_form.iconButtonOrders);
+                _form.OpenChildForm(new FormOrderDetails(_form, idZamowienia));
+                _form.labelTitleChildForm.Text = "Szczegoly zamowienia";
+            }
         }
     }
 }
