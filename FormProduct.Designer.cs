@@ -43,10 +43,10 @@
             // 
             this.pictureBoxObrazek.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBoxObrazek.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxObrazek.Location = new System.Drawing.Point(89, 124);
-            this.pictureBoxObrazek.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBoxObrazek.Location = new System.Drawing.Point(119, 153);
+            this.pictureBoxObrazek.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxObrazek.Name = "pictureBoxObrazek";
-            this.pictureBoxObrazek.Size = new System.Drawing.Size(247, 352);
+            this.pictureBoxObrazek.Size = new System.Drawing.Size(329, 433);
             this.pictureBoxObrazek.TabIndex = 0;
             this.pictureBoxObrazek.TabStop = false;
             // 
@@ -55,10 +55,10 @@
             this.textBoxNazwa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxNazwa.Enabled = false;
             this.textBoxNazwa.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBoxNazwa.Location = new System.Drawing.Point(360, 124);
-            this.textBoxNazwa.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNazwa.Location = new System.Drawing.Point(480, 153);
+            this.textBoxNazwa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxNazwa.Name = "textBoxNazwa";
-            this.textBoxNazwa.Size = new System.Drawing.Size(244, 30);
+            this.textBoxNazwa.Size = new System.Drawing.Size(324, 36);
             this.textBoxNazwa.TabIndex = 1;
             this.textBoxNazwa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -67,10 +67,10 @@
             this.textBoxPlatforma.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxPlatforma.Enabled = false;
             this.textBoxPlatforma.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBoxPlatforma.Location = new System.Drawing.Point(360, 167);
-            this.textBoxPlatforma.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPlatforma.Location = new System.Drawing.Point(480, 206);
+            this.textBoxPlatforma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPlatforma.Name = "textBoxPlatforma";
-            this.textBoxPlatforma.Size = new System.Drawing.Size(244, 30);
+            this.textBoxPlatforma.Size = new System.Drawing.Size(324, 36);
             this.textBoxPlatforma.TabIndex = 2;
             this.textBoxPlatforma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -79,10 +79,10 @@
             this.textBoxKategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxKategoria.Enabled = false;
             this.textBoxKategoria.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBoxKategoria.Location = new System.Drawing.Point(361, 210);
-            this.textBoxKategoria.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxKategoria.Location = new System.Drawing.Point(481, 258);
+            this.textBoxKategoria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxKategoria.Name = "textBoxKategoria";
-            this.textBoxKategoria.Size = new System.Drawing.Size(416, 30);
+            this.textBoxKategoria.Size = new System.Drawing.Size(553, 36);
             this.textBoxKategoria.TabIndex = 3;
             // 
             // textBoxCena
@@ -90,10 +90,10 @@
             this.textBoxCena.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxCena.Enabled = false;
             this.textBoxCena.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBoxCena.Location = new System.Drawing.Point(361, 253);
-            this.textBoxCena.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxCena.Location = new System.Drawing.Point(481, 311);
+            this.textBoxCena.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCena.Name = "textBoxCena";
-            this.textBoxCena.Size = new System.Drawing.Size(416, 30);
+            this.textBoxCena.Size = new System.Drawing.Size(553, 36);
             this.textBoxCena.TabIndex = 4;
             // 
             // textBoxOpis
@@ -101,13 +101,12 @@
             this.textBoxOpis.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxOpis.Enabled = false;
             this.textBoxOpis.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
-            this.textBoxOpis.Location = new System.Drawing.Point(361, 296);
-            this.textBoxOpis.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxOpis.Location = new System.Drawing.Point(481, 364);
+            this.textBoxOpis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxOpis.Multiline = true;
             this.textBoxOpis.Name = "textBoxOpis";
-            this.textBoxOpis.Size = new System.Drawing.Size(416, 180);
+            this.textBoxOpis.Size = new System.Drawing.Size(553, 221);
             this.textBoxOpis.TabIndex = 5;
-            this.textBoxOpis.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // iconButtonWroc
             // 
@@ -119,11 +118,11 @@
             this.iconButtonWroc.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
             this.iconButtonWroc.IconColor = System.Drawing.Color.White;
             this.iconButtonWroc.IconSize = 24;
-            this.iconButtonWroc.Location = new System.Drawing.Point(20, 20);
+            this.iconButtonWroc.Location = new System.Drawing.Point(27, 25);
             this.iconButtonWroc.Margin = new System.Windows.Forms.Padding(0);
             this.iconButtonWroc.Name = "iconButtonWroc";
             this.iconButtonWroc.Rotation = 0D;
-            this.iconButtonWroc.Size = new System.Drawing.Size(100, 42);
+            this.iconButtonWroc.Size = new System.Drawing.Size(133, 52);
             this.iconButtonWroc.TabIndex = 84;
             this.iconButtonWroc.Text = "Wróć";
             this.iconButtonWroc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -141,11 +140,11 @@
             this.iconButtonDodajDoKoszyka.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
             this.iconButtonDodajDoKoszyka.IconColor = System.Drawing.Color.White;
             this.iconButtonDodajDoKoszyka.IconSize = 48;
-            this.iconButtonDodajDoKoszyka.Location = new System.Drawing.Point(624, 124);
+            this.iconButtonDodajDoKoszyka.Location = new System.Drawing.Point(832, 153);
             this.iconButtonDodajDoKoszyka.Margin = new System.Windows.Forms.Padding(0);
             this.iconButtonDodajDoKoszyka.Name = "iconButtonDodajDoKoszyka";
             this.iconButtonDodajDoKoszyka.Rotation = 0D;
-            this.iconButtonDodajDoKoszyka.Size = new System.Drawing.Size(153, 73);
+            this.iconButtonDodajDoKoszyka.Size = new System.Drawing.Size(204, 90);
             this.iconButtonDodajDoKoszyka.TabIndex = 85;
             this.iconButtonDodajDoKoszyka.Text = "Dodaj do koszyka";
             this.iconButtonDodajDoKoszyka.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -154,9 +153,9 @@
             // 
             // FormProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 608);
+            this.ClientSize = new System.Drawing.Size(1163, 748);
             this.Controls.Add(this.iconButtonDodajDoKoszyka);
             this.Controls.Add(this.iconButtonWroc);
             this.Controls.Add(this.textBoxOpis);
@@ -165,7 +164,7 @@
             this.Controls.Add(this.textBoxPlatforma);
             this.Controls.Add(this.textBoxNazwa);
             this.Controls.Add(this.pictureBoxObrazek);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormProduct";
             this.Text = "FormProduct";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxObrazek)).EndInit();

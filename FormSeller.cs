@@ -69,7 +69,7 @@ namespace MrRobot
             {
                 foreach (var produkt in sprz.PobierzListeProduktow())
                 {
-                    if (produkt._nazwa.Trim().StartsWith(text.ToLower()))
+                    if (produkt._nazwa.Trim().ToLower().StartsWith(text.ToLower()))
                     {
                         list.Add(produkt);
                     }
