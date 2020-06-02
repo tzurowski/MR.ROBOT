@@ -28,29 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutShopPanel = new System.Windows.Forms.TableLayoutPanel();
+            tableLayoutShopPanel = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxFiltruj = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tableLayoutShopPanel
             // 
-            this.tableLayoutShopPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            tableLayoutShopPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutShopPanel.ColumnCount = 3;
-            this.tableLayoutShopPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutShopPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutShopPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutShopPanel.Location = new System.Drawing.Point(12, 55);
-            this.tableLayoutShopPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableLayoutShopPanel.Name = "tableLayoutShopPanel";
-            this.tableLayoutShopPanel.RowCount = 3;
-            this.tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34F));
-            this.tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutShopPanel.Size = new System.Drawing.Size(1139, 679);
-            this.tableLayoutShopPanel.TabIndex = 0;
+            tableLayoutShopPanel.ColumnCount = 3;
+            tableLayoutShopPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            tableLayoutShopPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            tableLayoutShopPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            tableLayoutShopPanel.Location = new System.Drawing.Point(12, 55);
+            tableLayoutShopPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            tableLayoutShopPanel.Name = "tableLayoutShopPanel";
+            tableLayoutShopPanel.RowCount = 3;
+            tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17F));
+            tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17F));
+            tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17F));
+            tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17F));
+            tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            tableLayoutShopPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            tableLayoutShopPanel.Size = new System.Drawing.Size(1139, 600);
+            tableLayoutShopPanel.TabIndex = 0;
             // 
             // comboBoxFiltruj
             // 
@@ -83,10 +86,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1163, 748);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxFiltruj);
-            this.Controls.Add(this.tableLayoutShopPanel);
+            this.Controls.Add(tableLayoutShopPanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormShop";
             this.Text = "FormShop";
@@ -96,9 +100,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutShopPanel;
         private System.Windows.Forms.ComboBox comboBoxFiltruj;
         private System.Windows.Forms.Label label1;
+        public static System.Windows.Forms.TableLayoutPanel tableLayoutShopPanel;
     }
 }

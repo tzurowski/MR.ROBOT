@@ -242,8 +242,21 @@
     <None Include="Resources\64495.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\wow.png" />
+    <None Include="Resources\wot.png" />
+    <None Include="Resources\codmw.png" />
+    <None Include="Resources\csgo.png" />
+    <None Include="Resources\fortnite.png" />
+    <None Include="Resources\godofwar.png" />
     <Content Include="Resources\gtaV.png" />
+    <None Include="Resources\halflife.png" />
+    <None Include="Resources\hearthstone.png" />
+    <None Include="Resources\justcause.png" />
+    <None Include="Resources\killingfloor2.png" />
+    <None Include="Resources\minecraft.png" />
     <Content Include="Resources\Overwatch.png" />
+    <None Include="Resources\seaofthieves.png" />
+    <None Include="Resources\terraria.png" />
     <Content Include="Resources\Valorant.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

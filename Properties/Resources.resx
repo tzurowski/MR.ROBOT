@@ -139,4 +139,43 @@
   <data name="Valorant" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Valorant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="codmw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\codmw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="csgo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\csgo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fortnite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fortnite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="godofwar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\godofwar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="halflife" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\halflife.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hearthstone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hearthstone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="justcause" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\justcause.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="killingfloor2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\killingfloor2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minecraft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minecraft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="seaofthieves" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\seaofthieves.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="terraria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\terraria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

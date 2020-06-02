@@ -97,42 +97,50 @@ namespace MrRobot
 
         private void iconButtonUsunZListy_Click(object sender, EventArgs e)
         {
-            list.RemoveAt(listBoxProdukty.SelectedIndex);
-            listBoxProdukty.Items.Remove(listBoxProdukty.Items[listBoxProdukty.SelectedIndex]);
+            if(listBoxProdukty.SelectedIndex != -1)
+            {
+                list.RemoveAt(listBoxProdukty.SelectedIndex);
+                FormShop.produktyWKoszyku.RemoveAt(listBoxProdukty.SelectedIndex);
+                listBoxProdukty.Items.Remove(listBoxProdukty.Items[listBoxProdukty.SelectedIndex]);
+            }
         }
 
         private void iconButtonDodajZamowienie_Click(object sender, EventArgs e)
         {
-            Zamowienie zamowienie = new Zamowienie();
-            zamowienie.listaProduktow = listBoxProdukty.Items.Cast<Produkt>().ToList();
-            zamowienie.dataZamowienia = DateTime.Now;
-            decimal kwota = 0;
-            foreach (var item in zamowienie.listaProduktow)
+            if(listBoxProdukty.Items.Count != 0)
             {
-                kwota += item._cena;
-            }
-            zamowienie.kwota = kwota;
-            zamowienie.status = "Wysłane do realizacji";
-            BazaTableAdapters.ZamowienieNaglowekTableAdapter zamowienieNaglowekTableAdapter = new BazaTableAdapters.ZamowienieNaglowekTableAdapter();
+                Zamowienie zamowienie = new Zamowienie();
+                zamowienie.listaProduktow = listBoxProdukty.Items.Cast<Produkt>().ToList();
+                zamowienie.dataZamowienia = DateTime.Now;
+                decimal kwota = 0;
+                foreach (var item in zamowienie.listaProduktow)
+                {
+                    kwota += item._cena;
+                }
+                zamowienie.kwota = kwota;
+                zamowienie.status = "Wysłane do realizacji";
+                BazaTableAdapters.ZamowienieNaglowekTableAdapter zamowienieNaglowekTableAdapter = new BazaTableAdapters.ZamowienieNaglowekTableAdapter();
 
-            BazaTableAdapters.UzytkownikTableAdapter uzytkownikTableAdapter = new BazaTableAdapters.UzytkownikTableAdapter();
-            foreach (Baza.UzytkownikRow row in uzytkownikTableAdapter.GetData().Rows)
-            {
-                string[] elementy = row.UserLogin.Split('|');
-                if (_form.login == elementy[0])
+                BazaTableAdapters.UzytkownikTableAdapter uzytkownikTableAdapter = new BazaTableAdapters.UzytkownikTableAdapter();
+                foreach (Baza.UzytkownikRow row in uzytkownikTableAdapter.GetData().Rows)
                 {
-                    zamowienieNaglowekTableAdapter.Insert(zamowienie.dataZamowienia, zamowienie.kwota, zamowienie.status, row.UserID);
-                    MessageBox.Show("Dodano zamówienie do wykonania", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    string[] elementy = row.UserLogin.Split('|');
+                    if (_form.login == elementy[0])
+                    {
+                        zamowienieNaglowekTableAdapter.Insert(zamowienie.dataZamowienia, zamowienie.kwota, zamowienie.status, row.UserID);
+                        MessageBox.Show("Dodano zamówienie do wykonania", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
                 }
-            }
-            foreach (Baza.ZamowienieNaglowekRow row in zamowienieNaglowekTableAdapter.GetData().Rows)
-            {
-                if (row.ZamNagDataZamowienia.ToString().Trim() == zamowienie.dataZamowienia.ToString().Trim())
+                foreach (Baza.ZamowienieNaglowekRow row in zamowienieNaglowekTableAdapter.GetData().Rows)
                 {
-                    DodajElementJakoZamowienie(row.ZamNagID);
+                    if (row.ZamNagDataZamowienia.ToString().Trim() == zamowienie.dataZamowienia.ToString().Trim())
+                    {
+                        DodajElementJakoZamowienie(row.ZamNagID);
+                    }
                 }
+                listBoxProdukty.Items.Clear();
+                FormShop.produktyWKoszyku.Clear();
             }
-            listBoxProdukty.Items.Clear();
         }
     }
 }

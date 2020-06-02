@@ -19,10 +19,25 @@ namespace MrRobot
         FormMainMenu _form;
         Produkt aktualnyProdukt = new Produkt();
         public List<int> products = new List<int>();
+        public static List<int> produktyWKoszyku = new List<int>();
         public FormShop(FormMainMenu form)
         {
             InitializeComponent();
+
+            tableLayoutShopPanel.AutoScroll = false;
+            tableLayoutShopPanel.HorizontalScroll.Enabled = false;
+            tableLayoutShopPanel.HorizontalScroll.Visible = false;
+            tableLayoutShopPanel.HorizontalScroll.Maximum = 0;
+            tableLayoutShopPanel.AutoScroll = true;
+            TableLayoutRowStyleCollection styles = tableLayoutShopPanel.RowStyles;
+            foreach (RowStyle style in styles)
+            {
+                // Set the row height to 20 pixels.
+                style.SizeType = SizeType.Absolute;
+                style.Height = 200;
+            }
             _form = form;
+            products = produktyWKoszyku;
             comboBoxFiltruj.SelectedIndex = 0;
             UstawProdukty();
         }
@@ -48,11 +63,12 @@ namespace MrRobot
                         StworzWidokProduktu(item._zdjecie, item._nazwa, item._cena.ToString(), kategoria._nazwaKategorii, item._produktID, i, j);
                     }
                 }
+                i++;
 
             }
         }
 
-        
+
         private void StworzWidokProduktu(string zdjecie, string nazwa, string cena, string kategoria, int id, int kolumna, int wiersz)
         {
             TableLayoutPanel panel = new TableLayoutPanel();
@@ -67,6 +83,8 @@ namespace MrRobot
             panel.RowStyles.Add(new RowStyle(SizeType.Percent, 20));
             panel.CellBorderStyle = TableLayoutPanelCellBorderStyle.None;
             panel.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right | AnchorStyles.Left);
+
+
 
             Image image = (Image)Properties.Resources.ResourceManager.GetObject($"{zdjecie}");
 
@@ -136,8 +154,9 @@ namespace MrRobot
             Button btn = (Button)sender;
             string idProdukt = btn.Name.Replace("iconButton", "");
             products.Add(int.Parse(idProdukt));
+            produktyWKoszyku = products;
             DialogResult result = MessageBox.Show("Pomyslnie dodano do koszyka, chcesz kontynuowac zakupy?", "Potwierdzenie", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if(result == DialogResult.No)
+            if (result == DialogResult.No)
             {
                 _form.ActivateButton(_form.iconButtonCart);
                 _form.OpenChildForm(new FormCart(products, _form));
@@ -151,11 +170,11 @@ namespace MrRobot
             List<Produkt> temp = produkty.PobierzListeProduktow();
             switch (filtr)
             {
-                case "malejaco":
-                    temp = temp.OrderBy(o => o._cena).ToList();
-                    break;
                 case "rosnaco":
-                    temp = temp.OrderBy(o => o._cena).ToList();
+                    temp = produkty.PobierzListeProduktow().OrderBy(o => o._cena).ToList();
+                    break;
+                case "malejaco":
+                    temp = produkty.PobierzListeProduktow().OrderBy(o => o._cena).ToList();
                     temp.Reverse();
                     break;
 

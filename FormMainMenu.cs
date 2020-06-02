@@ -17,6 +17,7 @@ namespace MrRobot
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        FormShop _formShop;
         public string login = "";
         public bool isAdmin = false;
         public bool isSeller = false;
@@ -69,13 +70,13 @@ namespace MrRobot
                 currentBtn.ForeColor = activeColor;
                 currentBtn.IconColor = activeColor;
                 //Left border button
-                leftBorderBtn.BackColor = activeColor; 
+                leftBorderBtn.BackColor = activeColor;
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
                 leftBorderBtn.Visible = true;
                 leftBorderBtn.BringToFront();
                 //Current Child Form Icon
                 iconCurrentChildForm.IconChar = currentBtn.IconChar;
-                
+
             }
         }
 
@@ -87,7 +88,7 @@ namespace MrRobot
                     panelAccountSubMenu.Visible = false;
                 if (currentBtn == (IconButton)iconButtonLogOut || currentBtn == (IconButton)iconButtonProfile)
                     currentBtn.BackColor = subMenuColor;
-                    
+
                 else
                     currentBtn.BackColor = sideMenuColor;
                 currentBtn.ForeColor = Color.Gainsboro;
@@ -104,9 +105,19 @@ namespace MrRobot
 
         private void iconButtonCart_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
-            OpenChildForm(new FormCart(this));
-            labelTitleChildForm.Text = "Koszyk";
+            if(isLoggedIn == true)
+            {
+                ActivateButton(sender);
+                OpenChildForm(new FormCart(FormShop.produktyWKoszyku, this));
+                labelTitleChildForm.Text = "Koszyk";
+                
+            }
+            else
+            {
+                ActivateButton(sender);
+                OpenChildForm(new FormCart(this));
+                labelTitleChildForm.Text = "Koszyk";
+            }
         }
 
         private void iconButtonOrders_Click(object sender, EventArgs e)
@@ -124,7 +135,7 @@ namespace MrRobot
                 OpenChildForm(new FormLogIn(this));
                 labelTitleChildForm.Text = "Zaloguj";
             }
-            else if(isLoggedIn == true)
+            else if (isLoggedIn == true)
             {
                 ActivateButton(sender);
                 //OpenChildForm(new FormProfile(this));
@@ -152,7 +163,7 @@ namespace MrRobot
 
         private void iconButtonLogOut_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Pomyślnie wylogowano","Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            MessageBox.Show("Pomyślnie wylogowano", "Komunikat", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             isAdmin = false;
             isLoggedIn = false;
             isSeller = false;
@@ -187,7 +198,7 @@ namespace MrRobot
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if(currentChildForm != null)
+            if (currentChildForm != null)
             {
                 currentChildForm.Close();
                 Reset();
@@ -202,9 +213,30 @@ namespace MrRobot
         private void iconButtonMaximize_Click(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
+            {
                 WindowState = FormWindowState.Maximized;
+                TableLayoutRowStyleCollection styles = FormShop.tableLayoutShopPanel.RowStyles;
+                foreach (RowStyle style in styles)
+                {
+                    // Set the row height to 20 pixels.
+                    style.SizeType = SizeType.Absolute;
+                    style.Height = 300;
+
+                }
+
+            }
             else
+            {
                 WindowState = FormWindowState.Normal;
+                TableLayoutRowStyleCollection styles = FormShop.tableLayoutShopPanel.RowStyles;
+                foreach (RowStyle style in styles)
+                {
+                    // Set the row height to 20 pixels.
+                    style.SizeType = SizeType.Absolute;
+                    style.Height = 200;
+
+                }
+            }
         }
 
         private void iconButtonMinimize_Click(object sender, EventArgs e)

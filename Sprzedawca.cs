@@ -33,10 +33,6 @@ namespace MrRobot
             BazaTableAdapters.ProduktTableAdapter edytujProdukt = new BazaTableAdapters.ProduktTableAdapter();
             edytujProdukt.Update(nazwa, cena, platforma, opis, zdjecie, kategoria, produkt._produktID, produkt._nazwa, produkt._cena, produkt._platforma, produkt._opis, produkt._zdjecie, produkt._kategoria);
         }
-        public void ZmienStatusZamowienia(Zamowienie zamowienie)
-        {
-
-        }
 
         public List<Produkt> PobierzListeProduktow()
         {

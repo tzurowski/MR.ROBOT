@@ -76,6 +76,7 @@ namespace MrRobot
         private void iconButtonDodajDoKoszyka_Click(object sender, EventArgs e)
         {
             _formShop.products.Add(_idProdukt);
+            FormShop.produktyWKoszyku = _formShop.products;
             DialogResult result = MessageBox.Show("Pomyslnie dodano do koszyka, chcesz kontynuowac zakupy?", "Potwierdzenie", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (result == DialogResult.No)
             {
